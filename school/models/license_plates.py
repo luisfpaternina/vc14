@@ -55,3 +55,17 @@ class LicensePlates(models.Model):
            
 		}
         self.env['sale.order'].create(vals)
+
+
+
+class LicensePlatesLines(models.Model):
+
+    _name = "license.plates.lines"
+    _description = "License plates lines"
+
+    course_id = fields.Many2one(
+        'courses',
+        string="Course")
+    student_id = fields.Many2one(
+        'students',
+        string="Student")
