@@ -5,6 +5,7 @@ from odoo import models, fields, api, _
 class Notes(models.Model):
 
     _name = "notes"
+    _inherit = 'mail.thread'
     _description = "Notes"
 
     name = fields.Char(string='Name', required=True, tracking=True)

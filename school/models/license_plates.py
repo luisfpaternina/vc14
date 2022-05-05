@@ -17,6 +17,7 @@ from odoo import models, fields, api, _
 class LicensePlates(models.Model):
 
     _name = "license.plates"
+    _inherit = 'mail.thread'
     _description = "License plates"
 
     name = fields.Char(string="Nombre", readonly=True, required=True, copy=False, tracking=True, default='New')

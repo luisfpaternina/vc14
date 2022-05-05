@@ -5,6 +5,7 @@ from odoo import models, fields, api, _
 class Courses(models.Model):
 
     _name = "courses"
+    _inherit = 'mail.thread'
     _description = "Courses"
 
     

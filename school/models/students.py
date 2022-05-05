@@ -7,6 +7,7 @@ from odoo.exceptions import ValidationError
 class Students(models.Model):
 
     _name = "students"
+    _inherit = 'mail.thread'
     _description = "students"
 
     name = fields.Char(string='Name', required=True, tracking=True)

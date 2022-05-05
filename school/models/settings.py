@@ -5,10 +5,14 @@ from odoo import models, fields, api, _
 class Settings(models.Model):
 
     _name = "settings"
+    _inherit = 'mail.thread'
     _description = "Settings"
 
     
-    name = fields.Char(string='Name', required=True, tracking=True)
+    name = fields.Char(
+        string='Name',
+        required=True,
+        tracking=True)
 
     @api.onchange('name')
     def _upper_name(self):        

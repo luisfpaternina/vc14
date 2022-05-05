@@ -7,6 +7,7 @@ from odoo import models, fields,_
 class Teachers(models.Model):
 
     _name = "teachers"
+    _inherit = 'mail.thread'
     _description = "Teachers"
    
 

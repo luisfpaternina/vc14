@@ -5,6 +5,7 @@ from odoo import models, fields, api, _
 class WorkExperience(models.Model):
 
     _name = "work.experience"
+    _inherit = 'mail.thread'
     _description = "Experience"
 
     name = fields.Char(string='Tittle', required=True, tracking=True)

@@ -5,6 +5,7 @@ from odoo import models, fields, api, _
 class Area(models.Model):
 
     _name = "area"
+    _inherit = 'mail.thread'
     _description = "Areas"
 
     
