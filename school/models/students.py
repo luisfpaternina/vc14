@@ -83,4 +83,15 @@ class Students(models.Model):
     # Heredar la función create para crear un contacto desde estudiantes
       self.create_student_partner()
       return super(Students, self).create(vals)
+
+
+
+class StudentsLines(models.Model):
+
+    _name = "students.lines"
+    _description = "students lines"
+
+    course_id = fields.Many2one(
+        'courses',
+        string="Course")
   
