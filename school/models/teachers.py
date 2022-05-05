@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
 #BY: LUIS FELIPE PATERNINA VITAL
-
-
-from odoo import models, fields,_
+from odoo import models, fields, api, _
 
 class Teachers(models.Model):
 
     _name = "teachers"
     _inherit = 'mail.thread'
     _description = "Teachers"
-   
 
-    
     name = fields.Char(string='Name', required=True, tracking=True)
     identification_type = fields.Selection([('cc','CC'),('ni','TI'),('ce','Passport')], string="Identification type", tracking=True)
     identification_number = fields.Char(string="Identification number", tracking=True)
@@ -37,15 +33,7 @@ class Teachers(models.Model):
         ('sep','Divorced'),
         ('other','Other')],string="Civil state")
 
- 
-   
 
-
-
-
-
-
-
-    
-    
-    
+    @api.onchange('name')
+    def _upper_name(self):        
+        self.name = self.name.upper() if self.name else False
