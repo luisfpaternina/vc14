@@ -5,8 +5,5 @@
 	        <field name="name">Manager School</field>
 	        <field name="comment">Manager School Permission Group</field>
 	    </record>
-
-	   
-
 	</data>
 </odoo>

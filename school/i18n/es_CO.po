@@ -409,7 +409,7 @@ msgstr "Masculino"
 #. module: school
 #: model:res.groups,name:school.school_manager_group
 msgid "Manager School"
-msgstr "Administrador"
+msgstr "Administrador/Colegio"
 
 #. module: school
 #: model:res.groups,comment:school.school_manager_group
