@@ -52,6 +52,10 @@ class Students(models.Model):
         string="Neighborhood")
     email = fields.Char(
         string="Email")
+    course_line_ids = fields.One2many(
+        'courses',
+        'student_id',
+        string="Courses")
 
 
     _sql_constraints = [
