@@ -16,7 +16,7 @@
 
     "summary": """This module is educational, which allows you to keep track of teachers, students, enrollment, among other things.""",
 
-    'version': '14.0',
+    'version': '14.0.0.0',
 
     'author': "Luis Felipe Paternina",
 
@@ -33,8 +33,8 @@
 
     'data': [
 
-        'security/ir.model.access.csv',
-        'security/security.xml',      
+        'security/security.xml',  
+        'security/ir.model.access.csv',    
         'views/school.xml',
         'views/students.xml',
         'views/teachers.xml',
