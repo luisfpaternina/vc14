@@ -94,4 +94,7 @@ class StudentsLines(models.Model):
     course_id = fields.Many2one(
         'courses',
         string="Course")
+    student_id = fields.Many2one(
+        'students',
+        string="Student")
   
