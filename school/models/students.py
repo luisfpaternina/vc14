@@ -40,4 +40,10 @@ class Students(models.Model):
     @api.onchange('name')
     def _upper_name(self):        
         self.name = self.name.upper() if self.name else False
+
+    def create_student_partner(self):
+        for record in self:
+            partner = record.env['res.partner'].create({
+                'name': record.name
+                })
   
