@@ -61,6 +61,10 @@ class LicensePlates(models.Model):
     email = fields.Char(
         string="Email",
         related="student_id.email")
+    course_line_ids = fields.One2many(
+        'license.plates.lines',
+        'license_plates_id',
+        string="Courses")
 
 
     #Secuencia para las matriculas de los estudiantes
@@ -98,3 +102,6 @@ class LicensePlatesLines(models.Model):
     student_id = fields.Many2one(
         'students',
         string="Student")
+    license_plates_id = fields.Many2one(
+        'license.plates',
+        string="License plates")
