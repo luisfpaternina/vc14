@@ -63,12 +63,21 @@ class Students(models.Model):
     ]
 
     @api.onchange('name')
-    def _upper_name(self):        
+    def _upper_name(self):
+    # Colocar mayusculas de forma automatica       
         self.name = self.name.upper() if self.name else False
 
     def create_student_partner(self):
+    # Crear un contacto res.partner
         for record in self:
             partner = record.env['res.partner'].create({
                 'name': record.name
                 })
+
+    @api.model
+    def create(self, vals):
+    # Heredar la función create para crear un contacto desde estudiantes
+      ## Definition
+      self.create_student_partner()
+      return super(Students, self).create(vals)
   
