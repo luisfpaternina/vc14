@@ -29,7 +29,9 @@
         'base_address_city',
         'account',
         'hr',
-        'contacts'
+        'contacts',
+        'sale_management',
+        'account_accountant',
 
     ],
 
@@ -44,7 +46,7 @@
         'views/courses.xml',
         'views/area.xml',
         'views/license_plates.xml',
-        #'reports/report_license_plates.xml',
+        'reports/report_license_plates.xml',
               
     ],
     

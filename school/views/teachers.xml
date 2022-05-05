@@ -135,10 +135,10 @@
         </record>
 
 
-        <menuitem id="school_teachers" name="Teachers" parent="menu_school"
-                  action="action_view_teachers"/>           
+        <menuitem 
+            id="school_teachers"
+            name="Teachers"
+            parent="menu_school"
+            action="action_view_teachers"/>          
     </data>
 </odoo>
-              
-       
-
