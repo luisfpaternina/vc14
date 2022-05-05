@@ -25,13 +25,6 @@
                             	    confirm="Are you sure?"/>
 
                         </header>
-                        <notebook colspan="4">
-                            <page name="courses_information" string="Courses information">
-                                <group>
-                                    
-                                </group>
-                            </page>
-                        </notebook>
                     <sheet>
                         <div class="oe_title">
                             <h1>
@@ -61,6 +54,13 @@
                             </group>
                         </group>
                     </sheet>
+                    <notebook colspan="4">
+                        <page name="courses_information" string="Courses information">
+                            <group>
+                                    
+                            </group>
+                        </page>
+                    </notebook>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>
                         <field name="message_ids" widget="mail_thread"/>
