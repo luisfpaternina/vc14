@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 #BY: LUIS FELIPE PATERNINA VITAL
-
-
-from odoo import models, fields,_
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
@@ -10,9 +8,7 @@ class Students(models.Model):
 
     _name = "students"
     _description = "students"
-    
 
-    
     name = fields.Char(string='Name', required=True, tracking=True)
     identification_type = fields.Selection([('cc','CC'),('ni','NI'),('ce','CE')], string="ID Type", tracking=True)
     identification_number = fields.Char(string="Identification Number", tracking=True)
@@ -32,7 +28,6 @@ class Students(models.Model):
     email = fields.Char(string="Email")
 
 
-
     _sql_constraints = [
 
     ('name_unique',
@@ -41,18 +36,7 @@ class Students(models.Model):
 
     ]
 
-
-
-
- 
-   
-
-
-
-
-
-
-
-    
-    
-    
+    @api.onchange('name')
+    def _upper_name(self):        
+        self.name = self.name.upper() if self.name else False
+  

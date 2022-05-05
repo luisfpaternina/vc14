@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 #BY: LUIS FELIPE PATERNINA VITAL
-
-
-from odoo import models, fields,_
+from odoo import models, fields, api, _
 
 class Courses(models.Model):
 
@@ -14,18 +12,8 @@ class Courses(models.Model):
     credit_number = fields.Integer(string="Credit Numbers")
     teacher_id = fields.Many2one('teachers',string="Teacher in charge")
     area_ids = fields.Many2many('area', string="Related areas")
-    
-    
 
- 
-   
-
-
-
-
-
-
-
-    
-    
-    
+    @api.onchange('name')
+    def _upper_name(self):        
+        self.name = self.name.upper() if self.name else False
+  

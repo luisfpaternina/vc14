@@ -11,9 +11,7 @@
 # Bogotá,Colombia
 #
 ###################################################################################################################################
-
-
-from odoo import models, fields, api,_
+from odoo import models, fields, api, _
 
 
 class LicensePlates(models.Model):
@@ -21,7 +19,6 @@ class LicensePlates(models.Model):
     _name = "license.plates"
     _description = "License plates"
 
-    
     name = fields.Char(string="Nombre", readonly=True, required=True, copy=False, tracking=True, default='New')
     student_id = fields.Many2one('students', string="Student")
     course = fields.Char(string="Course")
@@ -34,7 +31,6 @@ class LicensePlates(models.Model):
     neighborhood = fields.Char(string="Neighborhood", related="student_id.neighborhood")
     gender = fields.Selection(string="Gender", related="student_id.gender")
     email = fields.Char(string="Email", related="student_id.email")
-
 
 
     #Secuencia para las matriculas de los estudiantes
@@ -58,25 +54,3 @@ class LicensePlates(models.Model):
            
 		}
         self.env['sale.order'].create(vals)
-
-
-
-
-
-
-    
-    
-    
-
- 
-   
-
-
-
-
-
-
-
-    
-    
-    

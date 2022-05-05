@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
 #BY: LUIS FELIPE PATERNINA VITAL
-
-
-from odoo import models, fields,_
+from odoo import models, fields, api, _
 
 class School(models.Model):
 
     _name = "school"
     _description = "School"
 
-    
     name = fields.Char(string='Name', required=True, tracking=True)
     identification_type = fields.Selection([('cc','CC'),('ni','NI'),('ce','CE')], string="Identification Type", tracking=True)
     identification_number = fields.Char(string="Identification number", tracking=True)
@@ -23,16 +20,4 @@ class School(models.Model):
     nationality = fields.Many2one('res.country', string='Nacionality')
     city_id = fields.Many2one('res.city', string="City")
     attachment = fields.Binary(string="Attachment", tracking=True)
-
  
-   
-
-
-
-
-
-
-
-    
-    
-    
