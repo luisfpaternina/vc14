@@ -85,10 +85,10 @@
         </record>
 
 
-        <menuitem id="school_license_plates" name="License Plates" parent="menu_school_settings"
-                  action="action_view_license_plates"/>           
+        <menuitem
+            id="school_license_plates"
+            name="License Plates"
+            parent="menu_school"
+            action="action_view_license_plates"/>           
     </data>
 </odoo>
-              
-       
-
