@@ -36,11 +36,11 @@
         'security/security.xml',  
         'security/ir.model.access.csv',    
         'views/school.xml',
+        'views/settings.xml',
         'views/students.xml',
         'views/teachers.xml',
         'views/courses.xml',
         'views/area.xml',
-        'views/settings.xml',
         'views/license_plates.xml',
         #'reports/report_license_plates.xml',
               
