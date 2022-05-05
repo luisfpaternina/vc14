@@ -9,10 +9,21 @@ class Courses(models.Model):
     _description = "Courses"
 
     
-    name = fields.Char(string='Name of the subject', required=True, tracking=True)
-    credit_number = fields.Integer(string="Credit Numbers")
-    teacher_id = fields.Many2one('teachers',string="Teacher in charge")
-    area_ids = fields.Many2many('area', string="Related areas")
+    name = fields.Char(
+        string='Name of the subject',
+        required=True,
+        tracking=True)
+    credit_number = fields.Integer(
+        string="Credit Numbers")
+    teacher_id = fields.Many2one(
+        'teachers',
+        string="Teacher in charge")
+    area_ids = fields.Many2many(
+        'area',
+        string="Related areas")
+    student_id = fields.Many2one(
+        'students',
+        string="Student")
 
     @api.onchange('name')
     def _upper_name(self):        
