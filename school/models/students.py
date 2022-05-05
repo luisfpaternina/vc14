@@ -53,7 +53,7 @@ class Students(models.Model):
     email = fields.Char(
         string="Email")
     course_line_ids = fields.One2many(
-        'courses',
+        'students.lines',
         'student_id',
         string="Courses")
 
