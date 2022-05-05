@@ -24,6 +24,13 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <form string="students">
+                    <header>
+                        <button 
+                            string="Crear contacto"
+                            type="object"
+                            name="create_student_partner"
+                            class="btn-primary"/>
+                    </header>
                     <sheet>
                         <field name="photo" widget="image" class="oe_left oe_avatar"/>
                         <div class="oe_title">
