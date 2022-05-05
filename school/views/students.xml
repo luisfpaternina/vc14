@@ -79,6 +79,19 @@
                                     </group>
                                 </group>
                             </page>
+                            <page name="asignatures_information" string="Asignatures information">
+                                <group>
+                                    <group>
+                                        
+                                    </group>
+                                    <group>
+                                        
+                                    </group>
+                                    <group>
+                                        
+                                    </group>
+                                </group>
+                            </page>
                         </notebook>
                     </sheet>
                     <div class="oe_chatter">

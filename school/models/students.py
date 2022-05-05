@@ -77,7 +77,6 @@ class Students(models.Model):
     @api.model
     def create(self, vals):
     # Heredar la función create para crear un contacto desde estudiantes
-      ## Definition
       self.create_student_partner()
       return super(Students, self).create(vals)
   
