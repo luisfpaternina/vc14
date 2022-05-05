@@ -43,9 +43,10 @@
             </field>
         </record>
 
-
-        <menuitem id="menu_school_settings" name="Settings" parent="menu_school"
-                  action="action_view_settings"/>           
+        <menuitem id="menu_school_settings"
+            name="Settings"
+            parent="menu_school"
+            action="action_view_settings"/>          
     </data>
 </odoo>
               

@@ -56,7 +56,11 @@
         </record>
 
 
-        <menuitem id="menu_school" name="School" groups="school.school_manager_group"  web_icon="school,static/description/icon.png" sequence="36"/>
+        <menuitem id="menu_school"
+            name="School"
+            groups="school.school_manager_group" 
+            web_icon="school,static/description/icon.png"
+            sequence="36"/>
                    
     </data>
 </odoo>
