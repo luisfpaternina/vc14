@@ -9,7 +9,3 @@ from . import work_experience
 from . import settings
 from . import notes
 from . import license_plates
-
-
-
-
