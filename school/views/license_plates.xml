@@ -18,7 +18,6 @@
             <field name="arch" type="xml">
                 <form string="license_plates">
                         <header>
-
                             <button name="create_record_in_Sale_order" 
                             	    string="Create sale order" 
                             	    type="object" 
@@ -26,6 +25,13 @@
                             	    confirm="Are you sure?"/>
 
                         </header>
+                        <notebook colspan="4">
+                            <page name="courses_information" string="Courses information">
+                                <group>
+                                    
+                                </group>
+                            </page>
+                        </notebook>
                     <sheet>
                         <div class="oe_title">
                             <h1>
