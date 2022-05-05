@@ -9,3 +9,4 @@ manager_model_applied_studies,user_model_applied_studies,model_applied_studies,s
 manager_model_work_experience,user_model_work_experience,model_work_experience,school.school_manager_group,1,1,1,1
 manager_model_settings,user_model_settings,model_settings,school.school_manager_group,1,1,1,1
 manager_model_license_plates,user_model_license_plates,model_license_plates,school.school_manager_group,1,1,1,1
+manager_model_license_plates_lines,user_model_license_plates_lines,model_license_plates_lines,school.school_manager_group,1,1,1,1
