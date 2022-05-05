@@ -29,6 +29,8 @@
         'base',
         'base_address_city',
         'account',
+        'hr',
+        'contacts'
 
     ],
 
