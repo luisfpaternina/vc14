@@ -56,13 +56,11 @@
                         <notebook colspan="4">
                         <page name="courses_information" string="Courses information">
                             <group>
-                                <!--
-                                <field name="course_line_ids">
+                                <field name="license_plates_id">
                                     <tree editable="bottom">
                                         <field name="course_id" required="1"/>
                                     </tree>
                                 </field>
-                            -->
                             </group>
                         </page>
                     </notebook>
