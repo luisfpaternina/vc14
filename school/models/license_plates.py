@@ -98,7 +98,7 @@ class LicensePlates(models.Model):
             if stu_obj:
                 for s in stu_obj.course_line_ids:
                     vals = (0, 0,{
-                        'course_id': rec.course_id.id
+                        'course_id': s.course_id.id
                     })
                     lines.append(vals)
                 rec.course_line_ids = lines
