@@ -90,18 +90,7 @@ class LicensePlates(models.Model):
         self.env['sale.order'].create(vals)
 
 
-    @api.onchange('student_id')
-    def get_students_records(self):
-        for rec in self:
-            lines = []
-            stu_obj = rec.env['students'].search([('name', '=', rec.student_id.name)],limit=1)
-            if stu_obj:
-                for s in stu_obj.course_line_ids:
-                    vals = (0, 0,{
-                        'course_id': s.course_id.id
-                    })
-                    lines.append(vals)
-                rec.course_line_ids = lines
+    
 
 
 
