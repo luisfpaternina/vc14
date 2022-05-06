@@ -97,7 +97,7 @@ class LicensePlates(models.Model):
             obj = rec.env['students'].search([('id', '=', rec.student_id.id)],limit=1)
             if obj:
                 for o in obj.course_line_ids:
-                    vals(0, 0, {
+                    vals = (0, 0, {
                         'course_id': o.course_id.id
                     })
                     lines.append(vals)
