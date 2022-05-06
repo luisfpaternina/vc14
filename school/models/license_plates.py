@@ -91,7 +91,7 @@ class LicensePlates(models.Model):
 
 
     @api.onchange('student_id')
-    def get_records('self'):
+    def get_records(self):
         for rec in self:
             lines = []
             student_obj = rec.env['students'].search([('id', '=', rec.student_id.id)],limit=1)
