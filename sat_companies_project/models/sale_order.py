@@ -145,4 +145,4 @@ class SaleOrder(models.Model):
             elif record.sale_type_id.is_line:
                 record.payment_term_id = record.partner_id.payment_term_tel_id
             else:
-                record.payment_term_id = record.partner_id.property_payment_term_id
+                record.payment_term_id = False
