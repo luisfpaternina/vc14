@@ -139,10 +139,11 @@ class SaleOrder(models.Model):
         'sale_type_id',
         'product_id')
     def onchange_partner(self):
+    # plazos de pagos del contacto
         for record in self:
             if record.sale_type_id.is_maintenance:
                 record.payment_term_id = record.partner_id.payment_term_maintenance_id
             elif record.sale_type_id.is_line:
                 record.payment_term_id = record.partner_id.payment_term_tel_id
             else:
-                record.payment_term_id = record.partner_id.property_payment_term_id
+                record.payment_term_id = False
