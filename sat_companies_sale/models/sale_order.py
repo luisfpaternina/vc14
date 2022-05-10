@@ -119,8 +119,10 @@ class SaleOrder(models.Model):
                 record.task_user_id = record.product_id.employee_notice_id.user_id
             sale_type = record.product_id.subscription_template_id.sale_type_id
             gadgets_contract = record.product_id.subscription_template_id.gadgets_contract_type_id
-            record.sale_type_id = sale_type
-            record.gadgets_contract_type_id = gadgets_contract
+            if sale_type:
+                record.sale_type_id = sale_type
+            if gadgets_contract:
+                record.gadgets_contract_type_id = gadgets_contract
 
 
     @api.depends('product_id')
