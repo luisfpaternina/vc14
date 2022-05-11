@@ -28,7 +28,6 @@ class SaleTypeService(models.Model):
         'res.partner',
         string="testing")
 
-
     @api.onchange('name')
     def _upper_name(self):        
         self.name = self.name.upper() if self.name else False
