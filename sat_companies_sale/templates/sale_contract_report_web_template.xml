@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
+                                        <button class="btn btn-primary" id="sig-submitBtn">Previsualizar firma</button>
                                         <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
                                     </div>
                                 </div>
@@ -104,18 +104,18 @@
                         </div>
                     </div>
                     <div class="container">
-                        <button class="btn btn-primary" id="send_document">Send Document signatured</button>
+                        <button class="btn btn-primary" id="send_document">Enviar documento firmado</button>
                         <div class="card">
                             <t t-call="web.html_container">
                                 <t t-call="web.external_layout">
                                     <div class="page">
-                                        <h2>Report title</h2>
-                                        <p>Cotización Número <span t-esc="name"/></p>
+                                        <h2>CONTRATO</h2>
                                     </div>
                                     <div>
                                         <t t-foreach="sale_object.type_service_id" t-as="s">
                                             <ul>
-                                                <li><span t-esc="s.type_service_id.name"/></li>
+                                                <li><span t-esc="s.name"/></li>
+                                                <span t-raw="s.description_html"/>
                                             </ul>                    
                                         </t>
                                     </div>
@@ -126,95 +126,7 @@
                             </t>
                         </div>
                     </div>
-
-                    <!--
-                    <body class="table-light">
-                        <div class="card">
-                            <div role="dialog" class="modal fade" id="modalaccept">
-
-                                <div class="modal-dialog">
-                                    <form id="accept" method="POST" class="js_accept_json modal-content js_website_submit_form">
-                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                        <header class="modal-header">
-                                            <h4 class="modal-title">Validate Order</h4>
-                                        </header>
-                                        
-                                    </form>
-                                </div>
-                            </div>
-    
-                        </div>
-                    </body>
-                    -->
                 </main>
-            <!--
-                <link rel="stylesheet"
-                href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-                crossorigin="anonymous"/>
-                <body class="table-light">
-                    <div role="dialog" class="modal fade" id="modalaccept">
-                        <div class="modal-dialog">
-                            <form id="accept" method="POST" class="js_accept_json modal-content js_website_submit_form">
-                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                <header class="modal-header">
-                                    <h4 class="modal-title">Validate Order</h4>
-                                </header>
-                                <main class="modal-body" id="sign-dialog">
-                                    <p>
-                                        <span>FIRMA DE CONTRATO:</span>
-                                        <ul>
-                                            <li><span>Seleccione una de las opciones para proceder con su firma:</span> </li>
-                                        </ul>
-                                        <div class="o_portal_signature_form"/>
-                                    </p>
-                                </main>
-                            </form>
-                        </div>
-                    </div>
-                    <br></br>
-                    <br></br>
-                    <div id="div_principal_id" style="text-align: -webkit-center" class="table-light">
-                        <form class="col-sm-5">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2>Header</h2>
-                                </div>
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="col-sm-auto mt8">
-                                        <a role="button" class="btn btn-primary" data-toggle="modal" data-target="#modalaccept" href="#"><i class="fa fa-check"/>Firmar</a>
-                                    </div>
-                                    <div class="col-sm-auto mt8">
-                                        <button id="upload_signature" type="button" class="btn btn-primary">Cargar firma</button>
-                                    </div>
-                                    <div class="col-sm-auto mt8">
-                                        <button id="preview_sale_contract" type="button" class="btn btn-primary">Ver contrato</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div>
-                        <h1>DOCUMENTO CONTRATO</h1>
-                        <t t-call="web.html_container">
-                            <t t-call="web.external_layout">
-                                <div class="page">
-                                    <h2>Report title</h2>
-                                    <p>Cotización Número <span t-esc="name"/></p>
-                                </div>
-                            </t>
-                        </t>
-                    </div>
-                </body>
-            -->
             </t>
         </template>
     </data>

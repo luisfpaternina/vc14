@@ -42,7 +42,7 @@
                             <t t-foreach="o.type_service_id" t-as="line">
                                 <tr>
                                     <th>
-                                        <span t-field="line.type_service_id"/>
+                                        
                                     </th>
                                 </tr>
                                 <tr>

@@ -6,4 +6,4 @@ class CrmLead(models.Model):
     partner_type_id = fields.Many2one(
         'res.partner.type',
         string="Partner type",
-        tracking=True)
+        related="partner_id.partner_type_id")

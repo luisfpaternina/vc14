@@ -145,3 +145,14 @@ class CrmLead(models.Model):
                 record.opportunity_days = (today - record.quote_date_sent_min).days
             else:
                 record.opportunity_days = 0
+
+    def action_new_quotation(self):
+        result = super(CrmLead, self).action_new_quotation()
+        if result.get('id'):
+            vals = {
+                'default_udn_id': self.udn_type_id.id,
+                'default_sale_type_id': self.sale_type_id.id,
+            }
+        
+            result.get('context').update(vals)
+        return result
