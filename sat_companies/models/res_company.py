@@ -5,4 +5,8 @@ class ResCompany(models.Model):
 
     terms = fields.Text(
         string="Terms")
+    show_technical = fields.Boolean(
+        string="Enable technical")
+    is_potencial_client = fields.Boolean(
+        string="Is potencial client")
     

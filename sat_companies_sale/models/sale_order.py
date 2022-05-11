@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from markupsafe import string
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from datetime import datetime, date
@@ -30,9 +31,8 @@ class SaleOrder(models.Model):
     check_contract_type = fields.Boolean(
         compute="_compute_check_contract_type",
         )
-    type_service_id = fields.One2many(
-        'sale.check.type.contract',
-        'order_id',
+    type_service_id = fields.Many2many(
+        'sale.type.service',
         string='Type service'
         )
     pdf_file_sale_contract = fields.Binary(
@@ -85,7 +85,27 @@ class SaleOrder(models.Model):
         related="udn_id.is_normative")
     normative_date = fields.Date(
         string="Normative date")
+    show_technical = fields.Boolean(
+        string="Enable technical",
+        compute="compute_show_technical")
+    sign_contract_date = fields.Date(
+        string="Sign contract date",
+        compute="compute_contract_date")
 
+
+    @api.depends('state','pdf_file_sale_contract')
+    def compute_contract_date(self):
+        now = datetime.now()
+        for rec in self:
+            if rec.pdf_file_sale_contract:
+                rec.sign_contract_date = now
+            else:
+                rec.sign_contract_date = False
+
+    @api.depends('partner_id', 'product_id')
+    def compute_show_technical(self):
+        show_technical = self.env['ir.config_parameter'].sudo().get_param('sat_companies.show_technical') or False
+        self.show_technical = show_technical
 
     @api.onchange('sale_type_id', 'product_id')
     def domain_udns(self):
@@ -95,7 +115,6 @@ class SaleOrder(models.Model):
             else:
                 return {'domain': {'udn_id': []}}
 
-
     @api.onchange('sale_type_id')
     def domain_saletemplate(self):
         for record in self:
@@ -104,13 +123,11 @@ class SaleOrder(models.Model):
             else:
                 return {'domain': {'sale_order_template_id': []}}
 
-
     @api.onchange('state','name')
     def send_pdf_description(self):
         for record in self:
             if record.pdf_file_sale_contract:
                 record.pdf_description = 'CONTRATO HA SIDO FIRMADO'
-
 
     @api.onchange('product_id')
     def onchange_check_product(self):
@@ -124,7 +141,6 @@ class SaleOrder(models.Model):
             if gadgets_contract:
                 record.gadgets_contract_type_id = gadgets_contract
 
-
     @api.depends('product_id')
     def compute_check_product(self):
         for record in self:
@@ -133,7 +149,6 @@ class SaleOrder(models.Model):
             else:
                 record.check_product=False
         
-
     @api.depends('sale_type_id')
     def _compute_check_contract_type(self):
         for record in self:
@@ -143,18 +158,6 @@ class SaleOrder(models.Model):
             else:
                 record.check_contract_type = False
 
-
-    @api.constrains('contract_line_ids')
-    def _check_exist_record_in_lines(self):
-        for rec in self:
-            exis_record_lines = []
-            for line in rec.contract_line_ids:
-                if line.contact_id.id in exis_record_lines:
-                    raise ValidationError(_(
-                        'The item should be one per line'))
-                exis_record_lines.append(line.contact_id.id)
-
-
     @api.onchange('type_service_id')
     def get_item_count(self):
         for rec in self:
@@ -163,9 +166,7 @@ class SaleOrder(models.Model):
                 line.item = count
                 count += 1
 
-
     def get_table_type_contracts(self):
-
         flag = False
         table = '<ul>'
         for  type_service_id in self.type_service_id:
@@ -174,7 +175,6 @@ class SaleOrder(models.Model):
         
         table += '</ul>'
         return table if flag else False
-    
 
     def action_contract_send(self):
         self.contract_send = True
@@ -206,11 +206,9 @@ class SaleOrder(models.Model):
             'context': ctx,
         }
 
-
     def _compute_file_sale_contract(self):
         pdf = self.env.ref('sat_companies_sale.action_email_contract_signature').render_qweb_pdf(self.ids)
         b64_pdf = base64.b64encode(pdf[0])
-
 
     @api.depends('check_signature')
     def action_get_attachment(self):
@@ -226,17 +224,16 @@ class SaleOrder(models.Model):
             else:
                 record.pdf_file_sale_contract = False
 
-
-    @api.depends('state')
+    @api.depends('partner_id', 'state')
     def _calculated_quote_date_sent(self):
         today = date.today()
         for record in self:
             if record.state == 'sent':
                 record.quote_date_sent = today
+            elif record.state == 'done':
+                record.quote_date_sent = today
             else:
-                print("Presupuestos sin enviar...!")
                 record.quote_date_sent = False
-
 
     def action_send_email(self):
         self.ensure_one()

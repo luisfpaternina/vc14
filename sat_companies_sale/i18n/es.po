@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 12:28+0000\n"
-"PO-Revision-Date: 2022-03-21 12:28+0000\n"
+"POT-Creation-Date: 2022-05-11 14:47+0000\n"
+"PO-Revision-Date: 2022-05-11 14:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,21 +19,10 @@ msgstr ""
 #: model:mail.template,body_html:sat_companies_sale.email_template_contract_suspension
 msgid ""
 "\n"
-"                <p>Hi</p>\n"
+"                <p>COMUNIDAD DE PROPIETARIOS</p>\n"
 "                <br/>\n"
-"                <p>Here is the details of open invoices</p>\n"
-"                <br/>\n"
-"                 \n"
-"           "
-msgstr ""
-
-#. module: sat_companies_sale
-#: model:mail.template,body_html:sat_companies_sale.email_template
-msgid ""
-"\n"
-"                <p>Hi</p>\n"
-"                <br/>\n"
-"                <p>Here is the details</p>\n"
+"                <p>En Elche a de de 2022</p>\n"
+"                <p>Por una parte,</p>\n"
 "                <br/>\n"
 "                 \n"
 "           "
@@ -556,6 +545,11 @@ msgid "CONSENTIMIENTO INFORMADO"
 msgstr ""
 
 #. module: sat_companies_sale
+#: model_terms:ir.ui.view,arch_db:sat_companies_sale.sale_contract_report
+msgid "CONTRATO"
+msgstr ""
+
+#. module: sat_companies_sale
 #: model:ir.model,name:sat_companies_sale.model_crm_stage
 msgid "CRM Stages"
 msgstr "Etapas del CRM"
@@ -676,7 +670,6 @@ msgstr ""
 
 #. module: sat_companies_sale
 #: model_terms:ir.ui.view,arch_db:sat_companies_sale.report_contract_sale
-#: model_terms:ir.ui.view,arch_db:sat_companies_sale.sale_contract_report
 msgid "Cotización Número"
 msgstr ""
 
@@ -783,6 +776,11 @@ msgid "Description"
 msgstr "Descripción"
 
 #. module: sat_companies_sale
+#: model:ir.model.fields,field_description:sat_companies_sale.field_sale_type_service__description_html
+msgid "Description Html"
+msgstr ""
+
+#. module: sat_companies_sale
 #: model:ir.model.fields,field_description:sat_companies_sale.field_crm_lead__display_name
 #: model:ir.model.fields,field_description:sat_companies_sale.field_crm_lead_tracing__display_name
 #: model:ir.model.fields,field_description:sat_companies_sale.field_crm_lead_type__display_name
@@ -854,6 +852,11 @@ msgid ""
 msgstr ""
 
 #. module: sat_companies_sale
+#: model:ir.model.fields,field_description:sat_companies_sale.field_sale_order__show_technical
+msgid "Enable technical"
+msgstr ""
+
+#. module: sat_companies_sale
 #: model_terms:ir.ui.view,arch_db:sat_companies_sale.report_custom_template_sale_documentation
 msgid "En……………a……… de……………………. de………….."
 msgstr ""
@@ -875,6 +878,16 @@ msgstr ""
 msgid ""
 "Estado OCA           Favorable         Favorable con defectos"
 "                  Condicionada      Negativa"
+msgstr ""
+
+#. module: sat_companies_sale
+#: model:ir.model.fields,field_description:sat_companies_sale.field_crm_lead__expected_revenue
+msgid "Expected revenue"
+msgstr ""
+
+#. module: sat_companies_sale
+#: model:ir.model.fields,field_description:sat_companies_sale.field_crm_lead__expected_total
+msgid "Expected total"
 msgstr ""
 
 #. module: sat_companies_sale
@@ -1266,6 +1279,11 @@ msgid "Neighborhood community"
 msgstr "Comunidad de vecinos"
 
 #. module: sat_companies_sale
+#: model:ir.model.fields,field_description:sat_companies_sale.field_sale_type_service__x_studio_html_field_tdqSo
+msgid "New Html"
+msgstr ""
+
+#. module: sat_companies_sale
 #: model:ir.model.fields,field_description:sat_companies_sale.field_crm_lead_tracing__next_date
 msgid "Next Date"
 msgstr "Próx. Contacto"
@@ -1575,7 +1593,6 @@ msgid "Recorrido:"
 msgstr ""
 
 #. module: sat_companies_sale
-#: model:mail.template,subject:sat_companies_sale.email_template
 #: model:mail.template,subject:sat_companies_sale.email_template_contract_suspension
 msgid "Ref ${object.name or 'n/a' }"
 msgstr ""
@@ -1592,7 +1609,6 @@ msgstr "Reparar"
 
 #. module: sat_companies_sale
 #: model_terms:ir.ui.view,arch_db:sat_companies_sale.report_contract_sale
-#: model_terms:ir.ui.view,arch_db:sat_companies_sale.sale_contract_report
 msgid "Report title"
 msgstr "Título del reporte"
 
@@ -1692,6 +1708,11 @@ msgid "Servicios de averias"
 msgstr ""
 
 #. module: sat_companies_sale
+#: model:ir.model.fields,field_description:sat_companies_sale.field_sale_order__sign_contract_date
+msgid "Sign contract date"
+msgstr "Fecha firma contrato"
+
+#. module: sat_companies_sale
 #: model_terms:ir.ui.view,arch_db:sat_companies_sale.sale_contract_report
 msgid "Sign in the canvas below"
 msgstr ""
@@ -1768,10 +1789,15 @@ msgstr "Asignar tarea a ténico"
 
 #. module: sat_companies_sale
 #: code:addons/sat_companies_sale/models/.ipynb_checkpoints/sale_order-checkpoint.py:0
-#: code:addons/sat_companies_sale/models/sale_order.py:0
 #, python-format
 msgid "The item should be one per line"
-msgstr ""
+msgstr "No se pueden repetir los registros en las líneas de la tabla"
+
+#. module: sat_companies_sale
+#: code:addons/sat_companies_sale/models/sale_order.py:0
+#, python-format
+msgid "The item should be one per line in contract information"
+msgstr "No se pueden repetir los registros en las líneas de la información del contrato"
 
 #. module: sat_companies_sale
 #: model_terms:ir.ui.view,arch_db:sat_companies_sale.sale_contract_report

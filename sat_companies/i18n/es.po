@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-07 15:28+0000\n"
-"PO-Revision-Date: 2022-05-07 15:28+0000\n"
+"POT-Creation-Date: 2022-05-11 12:07+0000\n"
+"PO-Revision-Date: 2022-05-11 12:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sat_companies
-#: model:mail.template,body_html:sat_companies.template_account_receipt_27
+#: model:mail.template,body_html:sat_companies.template_account_receipt_32
 msgid ""
 "<?xml version=\"1.0\"?>\n"
 "<div>\n"
@@ -65,23 +65,23 @@ msgid ""
 "                        <tr>\n"
 "                            <td>\n"
 "                                <span>RECIBO NÚMERO</span><br/>\n"
-"                                <span>369875</span>\n"
+"                                <span>${object.move_id.name}</span>\n"
 "                            </td>\n"
 "                            <td>\n"
 "                                <span>LOCALIDAD DE EXPEDICIÓN</span><br/>\n"
-"                                <span>ELCHE</span>\n"
+"                                <span>${object.company_id.name}</span>\n"
 "                            </td>\n"
 "                            <td>\n"
 "                                <span>IMPORTE</span><br/>\n"
-"                                <span>100.000</span>\n"
+"                                <span>${object.credit}</span>\n"
 "                            </td>\n"
 "                        </tr>\n"
 "                        <tr>\n"
 "                            <td colspan=\"2\">\n"
-"                                <span align=\"left\">FECHA DE EXPEDICIÓN</span>\n"
+"                                <span align=\"left\">FECHA DE EXPEDICIÓN:</span><span> </span><span>${object.date}</span>\n"
 "                            </td>\n"
 "                            <td>\n"
-"                                <span align=\"right\">FECHA DE VENCIMIENTO</span>\n"
+"                                <span align=\"right\">FECHA DE VENCIMIENTO:</span><span> </span><span>${object.date_maturity}</span>\n"
 "                            </td>\n"
 "                        </tr>\n"
 "                    </table>\n"
@@ -107,109 +107,12 @@ msgid ""
 "                    </table>\n"
 "                    <div id=\"espacio\"/>\n"
 "                    <div id=\"cuadro1\">\n"
-"                        <span>NOMBRE Y DOMICILIO DEL LIBRADO</span>\n"
+"                        <span>NOMBRE Y DOMICILIO DEL LIBRADO</span><br/>\n"
+"                        <span>${object.partner_id.name}</span><br/>\n"
+"                        <span>${object.partner_id.street}</span>\n"
 "                    </div>\n"
 "                    <div id=\"cuadro2\">\n"
-"                        <strong>SERKI INSTALACIONES</strong>\n"
 "                        <strong>${object.company_id.name}</strong>\n"
-"                    </div>\n"
-"                </div>\n"
-"            "
-msgstr ""
-
-#. module: sat_companies
-#: model:mail.template,body_html:sat_companies.template_account_receipt_26
-msgid ""
-"<?xml version=\"1.0\"?>\n"
-"<div>\n"
-"                    <style>\n"
-"                        #t01 td {\n"
-"                        border: 1px solid black;\n"
-"                        padding: 5px;\n"
-"                        }\n"
-"                        #t02 td {\n"
-"                        border: 0px solid black;\n"
-"                        }\n"
-"                        div#cuadro_concepto{\n"
-"                        width:1050px;\n"
-"                        height:130px;\n"
-"                        background-color:white;\n"
-"                        float:left;\n"
-"                        border: 1px solid black;\n"
-"                        padding: 10px;\n"
-"                        }\n"
-"                        div#espacio{\n"
-"                        width:1000px;\n"
-"                        height:5px;\n"
-"                        background-color:white;\n"
-"                        border: 0px solid black;\n"
-"                        padding: 10px;\n"
-"                        }\n"
-"                        div#cuadro1{\n"
-"                        width:600px;\n"
-"                        height:130px;\n"
-"                        background-color:white;\n"
-"                        float:left;\n"
-"                        border: 1px solid black;\n"
-"                        padding: 10px;\n"
-"                        }\n"
-"                        div#cuadro2{\n"
-"                        width:300px;\n"
-"                        height:130px;\n"
-"                        background-color:white;\n"
-"                        float:right;\n"
-"                        border: 0px solid black;\n"
-"                        padding: 10px;\n"
-"                        }\n"
-"                    </style>\n"
-"                    <br/><br/>\n"
-"                    <table width=\"100%\" id=\"t01\">\n"
-"                        <tr>\n"
-"                            <td>\n"
-"                                <span>RECIBO NÚMERO</span><br/>\n"
-"                            </td>\n"
-"                            <td>\n"
-"                                LOCALIDAD DE EXPEDICIÓN\n"
-"                            </td>\n"
-"                            <td>\n"
-"                                IMPORTE\n"
-"                            </td>\n"
-"                        </tr>\n"
-"                        <tr>\n"
-"                            <td colspan=\"2\">\n"
-"                                <span align=\"left\">FECHA DE EXPEDICIÓN</span>\n"
-"                            </td>\n"
-"                            <td>\n"
-"                                <span align=\"right\">FECHA DE VENCIMIENTO</span>\n"
-"                            </td>\n"
-"                        </tr>\n"
-"                    </table>\n"
-"                    <br/>\n"
-"                    <table width=\"100%\" id=\"t01\">\n"
-"                        <tr style=\"height:100px\">\n"
-"                            <td>\n"
-"                                <span>CONCEPTO:</span><br/><br/>\n"
-"                                <span>IMPORTE:</span>\n"
-"                            </td>\n"
-"                        </tr>\n"
-"                    </table>\n"
-"                    <br/>\n"
-"                    <table width=\"100%\" id=\"t01\">\n"
-"                        <tr>\n"
-"                            <td>\n"
-"                                <span>PAGADO EN (CAJA O BANCO)</span><br/>\n"
-"                            </td>\n"
-"                            <td>\n"
-"                                <span>OFICINA</span><br/>\n"
-"                            </td>\n"
-"                        </tr>\n"
-"                    </table>\n"
-"                    <div id=\"espacio\"/>\n"
-"                    <div id=\"cuadro1\">\n"
-"                        <span>NOMBRE Y DOMICILIO DEL LIBRADO</span>\n"
-"                    </div>\n"
-"                    <div id=\"cuadro2\">\n"
-"                        <strong>SERKI INSTALACIONES</strong>\n"
 "                    </div>\n"
 "                </div>\n"
 "            "
@@ -235,6 +138,11 @@ msgstr ""
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.sat_companies_invoice_report
 msgid "<strong>R.A.E:</strong>"
+msgstr ""
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Account configuration"
 msgstr ""
 
 #. module: sat_companies
@@ -291,7 +199,7 @@ msgstr "Compañías"
 #: code:addons/sat_companies/models/account_move_line.py:0
 #, python-format
 msgid "Compose Email"
-msgstr "Correo"
+msgstr ""
 
 #. module: sat_companies
 #: model:ir.model,name:sat_companies.model_res_config_settings
@@ -319,6 +227,11 @@ msgid "Date"
 msgstr "Fecha"
 
 #. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Dates of technical in budget"
+msgstr "Datos del técnico en presupuesto"
+
+#. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_move__display_name
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_line__display_name
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid__display_name
@@ -328,9 +241,15 @@ msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_company__show_technical
+#: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__show_technical
+msgid "Enable technical"
+msgstr "Habilitar técnico"
+
+#. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
-msgid "Elevator configuration"
-msgstr "Configuración de ascensor"
+msgid "Enable technical of gadget in budget"
+msgstr "Mostrar datos del técnico en el presupuesto"
 
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.report_template_invoice
@@ -575,8 +494,7 @@ msgid "Recargo"
 msgstr ""
 
 #. module: sat_companies
-#: model:mail.template,subject:sat_companies.template_account_receipt_26
-#: model:mail.template,subject:sat_companies.template_account_receipt_27
+#: model:mail.template,subject:sat_companies.template_account_receipt_32
 msgid "Recibo"
 msgstr ""
 
@@ -584,6 +502,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:sat_companies.report_template_invoice
 msgid "Referencia"
 msgstr ""
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Required account"
+msgstr "Cuenta requerida"
 
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
@@ -618,14 +541,14 @@ msgid "Show QR in Report"
 msgstr "Mostar QR en el reporte"
 
 #. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Show technical"
+msgstr "Habilitar técnico"
+
+#. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_res_company__terms
 msgid "Terms"
 msgstr "Términos"
-
-#. module: sat_companies
-#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
-msgid "These emails are used for sending log"
-msgstr ""
 
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.report_template_invoice

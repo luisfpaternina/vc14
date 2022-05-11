@@ -23,6 +23,10 @@ class SaleTypeService(models.Model):
         string="Suscription")
     type_description = fields.Text(
         string="Description")
+    description_html = fields.Html()
+    type_service_id = fields.Many2one(
+        'res.partner',
+        string="testing")
 
 
     @api.onchange('name')
