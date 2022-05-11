@@ -20,6 +20,7 @@ class ResConfigSettings(models.TransientModel):
     
     
     def set_values(self):
+        ##############################################
         res = super(ResConfigSettings, self).set_values()
         self.env['ir.config_parameter'].sudo().set_param('charge', self.charge)
         self.env['ir.config_parameter'].sudo().set_param('show_technical', self.show_technical)
