@@ -73,9 +73,9 @@
                         <label for="date_begin" string="Assignment date" attrs="{'invisible': [('show_technical', '=', False)]}"/>
                         <div class="w-100">
                             <div class="o_row">
-                                <field name="date_begin" widget="daterange" options="{'related_end_date': 'date_end'}" attrs="{'invisible': [('product_id', '=', False)]}"/>
-                                <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow" attrs="{'invisible': [('product_id', '=', False)]}"/>
-                                <field name="date_end" widget="daterange" options="{'related_start_date': 'date_begin'}" attrs="{'invisible': [('product_id', '=', False)]}"/>
+                                <field name="date_begin" widget="daterange" options="{'related_end_date': 'date_end'}" attrs="{'invisible': [('show_technical', '=', False)]}"/>
+                                <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow" attrs="{'invisible': [('show_technical', '=', False)]}"/>
+                                <field name="date_end" widget="daterange" options="{'related_start_date': 'date_begin'}" attrs="{'invisible': [('show_technical', '=', False)]}"/>
                             </div>
                       </div>
                     </group>
