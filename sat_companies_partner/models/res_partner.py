@@ -107,9 +107,7 @@ class ResPartner(models.Model):
         tracking=True)
     comunities_ids = fields.One2many(
         'res.partner.communities',
-        'partner_id',
-        #compute="_compute_comunities"
-    )
+        'partner_id')
     is_oca = fields.Boolean(
         string="O.C.A",
         tracking=True)
@@ -165,7 +163,9 @@ class ResPartner(models.Model):
         string="Is billing administrator")
     community_president = fields.Char(
         string="Community president")
-
+    potencial_contact = fields.Boolean(
+        string="Validator potencial contact")
+    
 
     @api.onchange('is_acommunity')
     def _onchange_community(self):
@@ -174,11 +174,9 @@ class ResPartner(models.Model):
         else:
             self.is_acommunity = False
 
-
     def compute_gadget_communitie(self):
         for record in self:
             record.gadget_communitie_ids = record.gadget_ids
-
 
     @api.depends(
         'name',
@@ -190,7 +188,6 @@ class ResPartner(models.Model):
                 record.has_account = False
             else:
                 record.has_account = True
-
 
     _sql_constraints = [
         (
@@ -206,7 +203,6 @@ class ResPartner(models.Model):
                 raise ValidationError(_(
                     'The percentage cannot be greater than 100'))
 
-
     def compute_gadgets_partner(self):
         for record in self:
             products = self.env['product.template'].search([('partner_admin_id','=',self.id)])
@@ -214,7 +210,6 @@ class ResPartner(models.Model):
                 record.gadget_ids = products.ids
             else:
                 record.gadget_ids = False
-
 
     def compute_gadgets_client(self):
         for record in self:
@@ -224,7 +219,6 @@ class ResPartner(models.Model):
             else:
                 record.gadget_client_ids = False
 
-
     def compute_gadgets_oca(self):
         for record in self:
             products = self.env['product.template'].search([('partner_oca_id','=',self.id)])
@@ -232,7 +226,6 @@ class ResPartner(models.Model):
                 record.gadget_oca_ids = products.ids
             else:
                 record.gadget_oca_ids = False
-
 
     def compute_gadgets_comunities(self):
         for record in self:
@@ -242,15 +235,6 @@ class ResPartner(models.Model):
             else:
                 record.gadget_maintener_ids = False
 
-
-    @api.constrains('percentaje_mto', 'percentaje_rep')
-    def _validate_percentage(self):
-        for record in self:
-            if record.percentaje_rep > 100 or record.percentaje_mto > 100:
-                raise ValidationError(_(
-                    'The percentage cannot be greater than 100'))
-
-
     @api.constrains('phone')
     def validate_phone(self):
         for rec in self:
@@ -258,7 +242,6 @@ class ResPartner(models.Model):
                 if len(rec.phone) < 6 or re.match(r"^[a-zA-Z][ a-zA-Z]*", rec.phone):
                     raise ValidationError(_(
                         'The phone number cannot contain letters'))
-
 
     @api.constrains('mobile')
     def validate_mobile(self):
@@ -268,7 +251,6 @@ class ResPartner(models.Model):
                     raise ValidationError(_(
                         'The mobile number cannot contain letters'))
 
-
     @api.constrains('email')
     def validate_email(self):
         for rec in self:
@@ -276,7 +258,6 @@ class ResPartner(models.Model):
                 if not re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", rec.email):
                     raise ValidationError(_(
                     'Invalid email format!'))
-
 
     @api.onchange('name')
     def _upper_contact_name(self):        

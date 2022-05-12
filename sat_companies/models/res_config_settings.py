@@ -1,3 +1,4 @@
+from markupsafe import string
 from odoo import fields, models, api, _
 
 class ResConfigSettings(models.TransientModel):
@@ -17,8 +18,22 @@ class ResConfigSettings(models.TransientModel):
         related="company_id.is_potencial_client",
         readonly=False,
         config_parameter='sat_companies.is_potencial_client')
+    module_bim = fields.Boolean(
+        string="BIM")
+    module_bim_project = fields.Boolean(
+        string="BIM")
+    module_documents = fields.Boolean(
+        string="Documents")
+    module_sat_companies_quality = fields.Boolean(
+        string="Quality")
+    module_sat_companies_product_qr = fields.Boolean(
+        string="QR generator gadgets")
+    module_sat_companies_purchase = fields.Boolean(
+        string="Purchases")
+    module_sale_revision_history = fields.Boolean(
+        string="Sale revision history")
     
-    
+
     def set_values(self):
         res = super(ResConfigSettings, self).set_values()
         self.env['ir.config_parameter'].sudo().set_param('charge', self.charge)

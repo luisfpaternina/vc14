@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-11 12:07+0000\n"
-"PO-Revision-Date: 2022-05-11 12:07+0000\n"
+"POT-Creation-Date: 2022-05-12 17:50+0000\n"
+"PO-Revision-Date: 2022-05-12 17:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -151,9 +151,31 @@ msgid "Action Needed"
 msgstr "Acción"
 
 #. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Activate potencial client"
+msgstr ""
+
+#. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid__message_attachment_count
 msgid "Attachment Count"
 msgstr "Adjuntos"
+
+#. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__module_bim
+#: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__module_bim_project
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "BIM"
+msgstr ""
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "BIM project"
+msgstr ""
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "BIM with SAT"
+msgstr ""
 
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.report_template_invoice
@@ -207,6 +229,11 @@ msgid "Config Settings"
 msgstr "Opciones de configuración"
 
 #. module: sat_companies
+#: model:ir.model,name:sat_companies.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid__create_uid
 msgid "Created by"
 msgstr "Creado por"
@@ -237,8 +264,29 @@ msgstr "Datos del técnico en presupuesto"
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid__display_name
 #: model:ir.model.fields,field_description:sat_companies.field_res_company__display_name
 #: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
+
+#. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__module_documents
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Enable purchases"
+msgstr "Compras"
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Enable quality alerts in SAT"
+msgstr "Habilitar alertas de calidad"
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Enable sale revision history"
+msgstr "Habilitar historial de revisiones de ventas"
 
 #. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_res_company__show_technical
@@ -282,6 +330,11 @@ msgid "Followers (Partners)"
 msgstr ""
 
 #. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Gadgets"
+msgstr "Aparatos"
+
+#. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.report_template_invoice
 msgid "I.V.A"
 msgstr ""
@@ -292,6 +345,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid__id
 #: model:ir.model.fields,field_description:sat_companies.field_res_company__id
 #: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__id
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner__id
 msgid "ID"
 msgstr ""
 
@@ -323,16 +377,48 @@ msgid "Invoicing App Legacy"
 msgstr "Factura Sistema Anterior"
 
 #. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner__is_admin
+#: model:ir.model.fields,field_description:sat_companies.field_res_users__is_admin
+msgid "Is Admin"
+msgstr "Es administrador"
+
+#. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid__message_is_follower
 msgid "Is Follower"
 msgstr ""
 
 #. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner__is_acommunity
+#: model:ir.model.fields,field_description:sat_companies.field_res_users__is_acommunity
+msgid "Is a community"
+msgstr "Es una comunidad"
+
+#. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_bank_statement_line__is_potential_client
 #: model:ir.model.fields,field_description:sat_companies.field_account_move__is_potential_client
 #: model:ir.model.fields,field_description:sat_companies.field_account_payment__is_potential_client
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner__is_potential_client
+#: model:ir.model.fields,field_description:sat_companies.field_res_users__is_potential_client
 msgid "Is a potential client"
 msgstr "Contacto potencial"
+
+#. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner__is_billing_administrator
+#: model:ir.model.fields,field_description:sat_companies.field_res_users__is_billing_administrator
+msgid "Is billing administrator"
+msgstr "Enviar factura al administrador"
+
+#. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner__is_maintainer
+#: model:ir.model.fields,field_description:sat_companies.field_res_users__is_maintainer
+msgid "Is maintainer"
+msgstr "Mantenedora"
+
+#. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_company__is_potencial_client
+#: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__is_potencial_client
+msgid "Is potencial client"
+msgstr "Es un contacto potencial"
 
 #. module: sat_companies
 #: model:ir.model,name:sat_companies.model_account_move
@@ -350,6 +436,7 @@ msgstr "Apunte contable"
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid____last_update
 #: model:ir.model.fields,field_description:sat_companies.field_res_company____last_update
 #: model:ir.model.fields,field_description:sat_companies.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
 
@@ -439,6 +526,12 @@ msgid "N°Factura"
 msgstr ""
 
 #. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner__is_oca
+#: model:ir.model.fields,field_description:sat_companies.field_res_users__is_oca
+msgid "O.C.A"
+msgstr ""
+
+#. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.report_template_invoice
 msgid "PRE.UNI."
 msgstr ""
@@ -466,6 +559,12 @@ msgid "Potencial client configuration"
 msgstr "Configuración contactos potenciales"
 
 #. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__module_sat_companies_purchase
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Purchases"
+msgstr "Compras"
+
+#. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_bank_statement_line__invoice_qr_code
 #: model:ir.model.fields,field_description:sat_companies.field_account_bank_statement_line__qr_image
 #: model:ir.model.fields,field_description:sat_companies.field_account_move__invoice_qr_code
@@ -482,11 +581,27 @@ msgid "QR Code Image"
 msgstr "Imagen código QR"
 
 #. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__module_sat_companies_product_qr
+msgid "QR generator gadgets"
+msgstr "Generador QR aparatos"
+
+#. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_bank_statement_line__qr_code_name
 #: model:ir.model.fields,field_description:sat_companies.field_account_move__qr_code_name
 #: model:ir.model.fields,field_description:sat_companies.field_account_payment__qr_code_name
 msgid "Qr Code Name"
 msgstr "Nombre código QR"
+
+#. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__module_sat_companies_quality
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Quality"
+msgstr "Calidad"
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Quality alerts"
+msgstr "Alertas de calidad"
 
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.report_template_invoice
@@ -510,7 +625,7 @@ msgstr "Cuenta requerida"
 
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
-msgid "Required fields for leads"
+msgid "Required fields for potencial contacts"
 msgstr "Campos requeridos para contactos potenciales"
 
 #. module: sat_companies
@@ -527,6 +642,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr ""
+
+#. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_config_settings__module_sale_revision_history
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Sale revision history"
+msgstr "Historial de revisiones de ventas"
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Sales revision history"
+msgstr "Historial de revisiones de ventas"
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "Scann QR"
+msgstr "Scanear QR"
 
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.inherit_view_account_move_line_sat_companies
@@ -549,6 +680,11 @@ msgstr "Habilitar técnico"
 #: model:ir.model.fields,field_description:sat_companies.field_res_company__terms
 msgid "Terms"
 msgstr "Términos"
+
+#. module: sat_companies
+#: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
+msgid "This option enable QR scanner from gadget"
+msgstr "Esta opción habilita los código QR de aparatos"
 
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.report_template_invoice
@@ -583,6 +719,12 @@ msgid "VTO/S:"
 msgstr ""
 
 #. module: sat_companies
+#: model:ir.model.fields,field_description:sat_companies.field_res_partner__potencial_contact
+#: model:ir.model.fields,field_description:sat_companies.field_res_users__potencial_contact
+msgid "Validator potencial contact"
+msgstr "Validador de contactos potenciales"
+
+#. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid__website_message_ids
 msgid "Website Messages"
 msgstr ""
@@ -593,6 +735,24 @@ msgid "Website communication history"
 msgstr ""
 
 #. module: sat_companies
+#: code:addons/sat_companies/models/res_partner.py:0
+#, python-format
+msgid "You must register a Bank account"
+msgstr "Se debe registrar al menos 1 cuenta bancaría!"
+
+#. module: sat_companies
+#: code:addons/sat_companies/models/res_partner.py:0
+#, python-format
+msgid "You must register a city"
+msgstr "El campo ciudad es obligatorio"
+
+#. module: sat_companies
+#: code:addons/sat_companies/models/res_partner.py:0
+#, python-format
+msgid "You must register an identification number"
+msgstr "El campo número de identificación es obligatorio"
+
+#. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.res_config_settings_view_form_sat
 msgid "charge"
-msgstr ""
+msgstr "Cambio"

@@ -1,4 +1,3 @@
-from itertools import accumulate
 import time
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
@@ -58,7 +57,6 @@ class PurchaseMakeInvoiceAdvance(models.TransientModel):
 	fixed_amount = fields.Monetary('Down Payment Amount(Fixed)', help="The fixed amount to be invoiced in advance, taxes excluded.")
 	has_down_payments = fields.Boolean('Has down payments', default=_default_has_down_payment, readonly=True)
 	deduct_down_payments = fields.Boolean('Deduct down payments', default=True)
-	acumulate = fields.Float(string="Accumulate")
 
 	@api.onchange('advance_payment_method')
 	def onchange_advance_payment_method(self):
@@ -102,7 +100,6 @@ class PurchaseMakeInvoiceAdvance(models.TransientModel):
 			'purchase_line_id': [(6, 0, [po_line.id])],
 			'analytic_tag_ids': [(6, 0, po_line.analytic_tag_ids.ids)],
 			'analytic_account_id': po_line.account_analytic_id.id or False,
-			'tax_ids': [(6, 0, self.deposit_taxes_id.ids)],
 			})],
 		}
 		if order.fiscal_position_id:
@@ -158,7 +155,7 @@ class PurchaseMakeInvoiceAdvance(models.TransientModel):
 					'taxes_id': [(6, 0, tax_ids)],
 					'is_downpayment': True,
 					'qty_invoiced':-1,
-					#'date_planned':line.date_planned,
+					'date_planned':line.date_planned,
 					'dowm_payment':True,
 					})
 				del context
