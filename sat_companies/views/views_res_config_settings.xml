@@ -49,7 +49,7 @@
                                 <div class="o_setting_left_pane"/>
                                 <div class="o_setting_right_pane">
                                     <label string="BIM project" for="module_bim"/>
-                                    <div class="text-muted">BIM with SAT</div>
+                                    <div class="text-muted">Integrate BIM with SAT</div>
                                     <field name="module_bim"/>
                                 </div>
                             </div> 

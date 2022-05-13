@@ -62,7 +62,8 @@ class SaleOrderTemplateInherit(models.Model):
             if order.sale_type_id.is_maintenance == True:
                 if order.product_id.subscription_template_id:
                     to_create = {}
-                    to_create[order.product_id.subscription_template_id] = order.order_line
+                    # to_create[order.product_id.subscription_template_id] = order.order_line
+                    to_create[order.product_id.subscription_template_id] = order.order_line.filtered(lambda r: r.display_type == False)
                     #to_create.append(order.product_id.subscription_template_id)
                     #to_create.append(order.order_line)
                     # create a subscription for each template with all the necessary lines
