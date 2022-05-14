@@ -29,7 +29,7 @@
                     </header>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
-                            <button class="oe_stat_button" type="object" name="get_courses" icon="fa-car">
+                            <button class="oe_stat_button" type="object" name="get_courses" icon="fa-pencil">
                                 <field string="Courses" name="teacher_count" widget="statinfo"/>
                             </button>
                         </div>
