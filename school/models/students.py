@@ -56,6 +56,25 @@ class Students(models.Model):
         'students.lines',
         'student_id',
         string="Courses")
+    student_count = fields.Integer(
+        string="student count",
+        compute="compute_teacher_count")
+
+
+    def get_license_plates(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Licences',
+            'view_mode': 'tree',
+            'res_model': 'license.plates',
+            'domain': [('student_id', '=', self.id)],
+            'context': "{'create': False}"
+        }
+
+    def compute_teacher_count(self):
+        for record in self:
+            record.student_count = self.env['license.plates'].search_count([('student_id', '=', self.id)])
 
 
     _sql_constraints = [
