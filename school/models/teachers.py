@@ -32,7 +32,25 @@ class Teachers(models.Model):
         ('vu','Widower'),
         ('sep','Divorced'),
         ('other','Other')],string="Civil state")
+    teacher_count = fields.Integer(
+        string="Teacher count",
+        compute="compute_teacher_count")
 
+
+    def get_courses(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Courses',
+            'view_mode': 'tree',
+            'res_model': 'courses',
+            'domain': [('teacher_id', '=', self.id)],
+            'context': "{'create': False}"
+        }
+
+    def compute_teacher_count(self):
+        for record in self:
+            record.teacher_count = self.env['courses'].search_count([('teacher_id', '=', self.id)])
 
     @api.onchange('name')
     def _upper_name(self):        

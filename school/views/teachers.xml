@@ -25,7 +25,10 @@
             <field name="arch" type="xml">
                 <form string="teachers">
                     <header>
-                        
+                        <button class="oe_stat_button" type="object" name="get_courses"
+                        icon="fa-car">
+                            <field string="Courses" name="teacher_count" widget="statinfo"/>
+                        </button>
                     </header>
                     <sheet>
                         <field name="photo" widget="image" class="oe_left oe_avatar"/>
