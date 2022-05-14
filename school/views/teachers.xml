@@ -24,6 +24,9 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <form string="teachers">
+                    <header>
+                        
+                    </header>
                     <sheet>
                         <field name="photo" widget="image" class="oe_left oe_avatar"/>
                         <div class="oe_title">
@@ -54,7 +57,17 @@
                                     </group>
                                 </group>
                             </page>
-                            <page name="academic_information" string="Academic information">
+                            <page name="familiar_information" string="Family Information">
+                                <group>
+                                    <group string="Spouse data">
+                                        
+                                    </group>
+                                    <group string="Person in case of emergency">
+                                        
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Skills/Experience">
                                 <group string="Experiencia Laboral">
                                     <field name="work_experience_ids" string="Experience">
                                         <tree editable="bottom">
@@ -76,16 +89,6 @@
                                             <field name="status"/>
                                         </tree>
                                     </field>
-                                </group>
-                            </page>
-                            <page name="familiar_information" string="Family Information">
-                                <group>
-                                    <group string="Spouse data">
-                                        
-                                    </group>
-                                    <group string="Person in case of emergency">
-                                        
-                                    </group>
                                 </group>
                             </page>
                         </notebook>
