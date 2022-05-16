@@ -235,32 +235,50 @@ class SaleOrder(models.Model):
             else:
                 record.quote_date_sent = False
 
-    def action_send_email(self):
+    def action_send_email_welcome(self):
+    # FUNCIÓN PARA ENVIAR CORREOS CON PDF ADJUNTO
         self.ensure_one()
-        ir_model_data = self.env['ir.model.data']
-        try:
-            template_id = \
-            ir_model_data.get_object_reference('test_email', 'email_template_contract_suspension')[1]
-        except ValueError:
-            template_id = False
-        try:
-            compose_form_id = ir_model_data.get_object_reference('mail', 'email_compose_message_wizard_form')[1]
-        except ValueError:
-            compose_form_id = False
+        wizard = self.env['sale.order']
+        wizard = wizard.create({
+                'name': self.name,
+                'partner_id': self.partner_id.id,
+        })
+        # Se agrega PDF
+        pdf = self.env.ref('sat_companies_sale.id_welcome_mjs')._render_qweb_pdf(wizard.id)
+        b64_pdf = base64.b64encode(pdf[0])
+        ATTACHMENT_NAME = 'Carta de bienvenida' + '-' + self.name
+        attach_report = self.env['ir.attachment'].create({
+            'name': ATTACHMENT_NAME,
+            'type': 'binary',
+            'datas': b64_pdf,
+            'store_fname': ATTACHMENT_NAME,
+            'res_model': self._name,
+            'res_id': self.id,
+            'mimetype': 'application/pdf'
+        })
+        # Se agrega plantilla de correo
+        template_id = self.env['ir.model.data'].xmlid_to_res_id('sat_companies_sale.template_email_welcome_sale', raise_if_not_found=False)
+        lang = self.env.context.get('lang')
+        template = self.env['mail.template'].browse(template_id)
+        template.attachment_ids = [(6,0,[attach_report.id])]
+        if template.lang:
+            lang = template._render_template(template.lang, 'sale.order', self.ids)
         ctx = {
-        'default_model': 'sale.order',
-        'default_res_id': self.ids[0],
-        'default_use_template': bool(template_id),
-        'default_template_id': template_id,
-        'default_composition_mode': 'comment',
+            'default_model': 'sale.order',
+            'default_res_id': self.ids[0],
+            'default_use_template': bool(template_id),
+            'default_template_id': template_id,
+            'default_composition_mode': 'comment',
+            'mark_so_as_sent': True,
+            'proforma': self.env.context.get('proforma', False),
+            'force_email': True,
         }
         return {
-        'name': _('Compose Email'),
-        'type': 'ir.actions.act_window',
-        'view_mode': 'form',
-        'res_model': 'mail.compose.message',
-        'views': [(compose_form_id, 'form')],
-        'view_id': compose_form_id,
-        'target': 'new',
-        'context': ctx,
+            'type': 'ir.actions.act_window',
+            'view_mode': 'form',
+            'res_model': 'mail.compose.message',
+            'views': [(False, 'form')],
+            'view_id': False,
+            'target': 'new',
+            'context': ctx,
         }
