@@ -18,6 +18,15 @@ odoo.define('sat_companies_sale.javascript', ['web.ajax'], function(require){
         };
     })();
   
+    var backendUrl = document.getElementById("BackendUrl").textContent;
+    console.log(backendUrl)
+
+    function return_sale_order() {
+      console.log('INGRESO A FUNCION RETURN')
+      console.log(backendUrl)
+      return backendUrl;
+    }
+
     var canvas = document.getElementById("sig-canvas");
     var ctx = canvas.getContext("2d");
     ctx.strokeStyle = "#222222";
@@ -195,5 +204,6 @@ odoo.define('sat_companies_sale.javascript', ['web.ajax'], function(require){
     document.getElementById("menu_signature_pad").hidden = false;
     console.log("draw_select_option")
   }, false);
+
 
 });

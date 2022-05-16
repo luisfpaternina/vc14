@@ -12,11 +12,15 @@ class SaleContractController(http.Controller):
     @http.route('/contract/<model("sale.order"):sale_order>', auth='public', website=True)
     def redirect_contract_report(self, sale_order):
         qr_product_form = request.env['sale.order'].sudo().search([('id','=',sale_order.id)])
+        actions_windows = request.env['ir.actions.act_window'].search([])
+        action_order = actions_windows.filtered(lambda b: b.xml_id == 'sale.action_quotations_with_onboarding')
+        base_url_home = request.env['ir.config_parameter'].get_param('web.base.url')
         return http.request.render('sat_companies_sale.sale_contract_report',{
             'sale_object': sale_order,
             'name': sale_order.name,
             'pdf_file': sale_order.pdf_file_sale_contract,
-            'id_value': sale_order.id
+            'id_value': sale_order.id,
+            'backend_url': base_url_home+"/web#model=sale.order&id="+str(sale_order.id)+"&action="+str(action_order.id)+"&view_type=form",
         })
 
     @http.route(['/get_sale/print_report_contract/'], type='json', auth='public', website=True)

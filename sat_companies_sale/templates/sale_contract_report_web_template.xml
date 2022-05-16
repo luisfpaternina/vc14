@@ -9,21 +9,20 @@
                     <div class="container text-center" hidden="True">
                         <p>REF QUOTATION <span t-esc="name"/></p>
                         <p id="id_value_sale" t-esc="id_value"/>
-                    </div>
-                    <div class="alert alert-success" role="alert" id="alertSignatureSent" hidden="True">
-                      <h4 class="alert-heading">Well done!</h4>
-                      <p>The signed contract has been sent.</p>
+                        <p id="BackendUrl" t-esc="backend_url"/>
                     </div>
                     <div class = "alert alert-info alert-dismissible rounded-0 fade show d-print-none css_editable_mode_hidden">
-                        <div class = "container">
-                            <div class="text-center">
-                                This is a preview of the customer portal.
-                            </div>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"> × </button>
-                        </div>
+
                     </div>
                     <div class="container text-center" >
                         <div class="card">
+                            <div class="text-center">
+                                This is a preview of the customer portal.
+                                <!--<a href="<script>" backendUrl "</script>"><i class="fa fa-arrow-right mr-1"></i>Back to edit mode</a>
+                                -->
+                                <a id="return_orderback" href="#" onclick="location.href=document.getElementById('BackendUrl').textContent">Regresar a la orden del Back</a>
+                            </div>
+                            
                             <!--
                             <div class="col-sm-auto mt8">
                                 <a role="button" class="btn btn-primary" data-toggle="modal" data-target="#modalaccept" href="#"><i class="fa fa-check"/>Firmar</a>
@@ -104,7 +103,13 @@
                         </div>
                     </div>
                     <div class="container">
-                        <button class="btn btn-primary" id="send_document">Enviar documento firmado</button>
+                        <div>
+                            <button class="btn btn-primary" id="send_document">Enviar documento firmado</button>
+                            <div class="alert alert-success" role="alert" id="alertSignatureSent" hidden="True">
+                                <h4 class="alert-heading">Well done!</h4>
+                                <p>The signed contract has been sent.</p>
+                            </div>
+                        </div>
                         <div class="card">
                             <t t-call="web.html_container">
                                 <t t-call="web.external_layout">
