@@ -32,6 +32,8 @@ class ResConfigSettings(models.TransientModel):
         string="Purchases")
     module_sale_revision_history = fields.Boolean(
         string="Sale revision history")
+    module_pc_stock_picking_ext = fields.Boolean(
+        string="pc stock picking ext")
     
 
     def set_values(self):

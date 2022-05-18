@@ -12,4 +12,14 @@ class StockPicking(models.Model):
         'product.template',
         string="Gadget",
         related="task_id.product_id")
+
+
+    @api.onchange('task_id')
+    def get_partner_id_from_task(self):
+    # FUNCIÓN PARA RELACIONAR CONTACTO DE LA OT
+        for rec in self:
+            if rec.task_id:
+                rec.partner_id = rec.task_id.partner_id.id
+            else:
+                rec.partner_id = False
   

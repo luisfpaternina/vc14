@@ -74,13 +74,10 @@
                         </div>
                         <group>
                             <group>
-                                <div class="o_td_label">
-                                    <label for="partner_id" string="Delivery Address" style="font-weight:bold;" attrs="{'invisible': [('picking_type_code', '!=', 'outgoing')]}"/>
-                                    <label for="partner_id" string="Receive From" style="font-weight:bold;" attrs="{'invisible': [('picking_type_code', '!=', 'incoming')]}"/>
-                                    <label for="partner_id" string="Contact" style="font-weight:bold;" attrs="{'invisible': [('picking_type_code', 'in', ['incoming', 'outgoing'])]}"/>
-                                </div>
+                                <field name="task_id" options="{'no_create': True, 'no_create_edit':True}" domain = "[('is_fsm','=',True)]"/>
+                                <field name="gadget_id" options="{'no_create': True, 'no_create_edit':True}" domain = "[('is_gadget','=',True)]"/>
                                 <field name="company_id" invisible="1"/>
-                                <field name="partner_id" nolabel="1"/>
+                                <field name="partner_id"/>
                                 <field name="picking_type_id"  options="{'no_create': True, 'no_create_edit':True}" domain = "[('code','=','internal')]" attrs="{'invisible': [('hide_picking_type', '=', True)], 'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="location_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" attrs="{'invisible': [('picking_type_code', '=', 'incoming')]}"/>
                                 <field name="location_dest_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" attrs="{'invisible': [('picking_type_code', '=', 'outgoing')]}"/>
@@ -95,8 +92,6 @@
                                 <field name="date_deadline" attrs="{'invisible': ['|', ('state', 'in', ('done', 'cancel')), ('date_deadline', '=', False)]}" decoration-danger="date_deadline and date_deadline &lt; current_date" decoration-bf="date_deadline and date_deadline &lt; current_date"/>
                                 <field name="date_done" string="Effective Date" attrs="{'invisible': [('state', '!=', 'done')]}"/>
                                 <field name="origin" placeholder="e.g. PO0032"/>
-                                <field name="task_id" options="{'no_create': True, 'no_create_edit':True}" domain = "[('is_fsm','=',True)]"/>
-                                <field name="gadget_id" options="{'no_create': True, 'no_create_edit':True}" domain = "[('is_gadget','=',True)]"/>
                                 <field name="owner_id" groups="stock.group_tracking_owner" attrs="{'invisible': [('picking_type_code', '!=', 'incoming')]}"/>
                             </group>
                         </group>
