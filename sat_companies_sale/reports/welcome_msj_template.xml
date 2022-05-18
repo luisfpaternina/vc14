@@ -53,7 +53,7 @@ Además, nos encanta escuchar y aprender, por eso, si tienes alguna sugerencia p
 
         <report
                 id="id_welcome_mjs"
-                string="MJS Bienvenido"
+                string="Carta de bienvenida"
                 model="sale.order"
                 report_type="qweb-pdf"
                 name="sat_companies_sale.report_welcome_msj"
