@@ -59,7 +59,7 @@ msgstr "Dirección de entrega"
 #. module: pc_stock_picking_ext
 #: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
 msgid "Demand"
-msgstr ""
+msgstr "Demanda"
 
 #. module: pc_stock_picking_ext
 #: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
@@ -166,7 +166,7 @@ msgstr ""
 #. module: pc_stock_picking_ext
 #: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
 msgid "Reserved"
-msgstr ""
+msgstr "Reservado"
 
 #. module: pc_stock_picking_ext
 #: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
