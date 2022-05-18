@@ -81,7 +81,7 @@
                                 </div>
                                 <field name="company_id" invisible="1"/>
                                 <field name="partner_id" nolabel="1"/>
-                                <field name="picking_type_id" attrs="{'invisible': [('hide_picking_type', '=', True)], 'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="picking_type_id"  options="{'no_create': True, 'no_create_edit':True}" domain = "[('code','=','internal')]" attrs="{'invisible': [('hide_picking_type', '=', True)], 'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="location_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" attrs="{'invisible': [('picking_type_code', '=', 'incoming')]}"/>
                                 <field name="location_dest_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" attrs="{'invisible': [('picking_type_code', '=', 'outgoing')]}"/>
                                 <field name="backorder_id" attrs="{'invisible': [('backorder_id','=',False)]}"/>
