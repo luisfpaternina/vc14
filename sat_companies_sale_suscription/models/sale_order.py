@@ -98,6 +98,6 @@ class SaleOrderTemplateInherit(models.Model):
                                 'category': subscription.stage_category,
                                 'user_id': order.user_id.id,
                                 'team_id': order.team_id.id,
-                                'project_task_id': project_task.id or False
+                                # 'project_task_id': project_task.id or False
                             })
         return res
