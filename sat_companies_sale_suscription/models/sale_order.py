@@ -88,16 +88,17 @@ class SaleOrderTemplateInherit(models.Model):
                                 subtype_id=self.env.ref('mail.mt_note').id, author_id=self.env.user.partner_id.id
                             )
                             project_task = self.env['project.task'].search([('sale_order_id.id','=',order.id)])
-                            self.env['sale.subscription.log'].sudo().create({
-                                'subscription_id': subscription.id,
-                                'event_date': fields.Date.context_today(self),
-                                'event_type': '0_creation',
-                                'amount_signed': subscription.recurring_monthly,
-                                'recurring_monthly': subscription.recurring_monthly,
-                                'currency_id': subscription.currency_id.id,
-                                'category': subscription.stage_category,
-                                'user_id': order.user_id.id,
-                                'team_id': order.team_id.id,
-                                'project_task_id': project_task.id or False
-                            })
+                            for task in project_task:
+                                self.env['sale.subscription.log'].sudo().create({
+                                    'subscription_id': subscription.id,
+                                    'event_date': fields.Date.context_today(self),
+                                    'event_type': '0_creation',
+                                    'amount_signed': subscription.recurring_monthly,
+                                    'recurring_monthly': subscription.recurring_monthly,
+                                    'currency_id': subscription.currency_id.id,
+                                    'category': subscription.stage_category,
+                                    'user_id': order.user_id.id,
+                                    'team_id': order.team_id.id,
+                                    'project_task_id': task.id or False
+                                })
         return res
