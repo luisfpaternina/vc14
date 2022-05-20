@@ -88,6 +88,7 @@ class SaleOrderTemplateInherit(models.Model):
                                 subtype_id=self.env.ref('mail.mt_note').id, author_id=self.env.user.partner_id.id
                             )
                             project_task = self.env['project.task'].search([('sale_order_id.id','=',order.id)])
+
                             for task in project_task:
                                 self.env['sale.subscription.log'].sudo().create({
                                     'subscription_id': subscription.id,
@@ -101,4 +102,5 @@ class SaleOrderTemplateInherit(models.Model):
                                     'team_id': order.team_id.id,
                                     'project_task_id': task.id or False
                                 })
+
         return res
