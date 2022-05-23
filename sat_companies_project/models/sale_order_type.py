@@ -36,12 +36,22 @@ class SaleOrderType(models.Model):
         string="Other")
     is_mounting = fields.Boolean(
         string="Is mounting")
+    is_warning = fields.Boolean(
+        string="Is warning")
+    task_template_id = fields.Many2one(
+        'project.task.template',
+        string="Task template")
+    
 
+    @api.onchange('task_template_id')
+    def change_task_template(self):
+        task_template_obj = self.env['project.task.template'].browse(self.task_template_id.id)
+        if task_template_obj:
+            self.write({'project_task_ids': task_template_obj.task_ids.ids})
 
     @api.onchange('name')
     def _upper_name(self):        
         self.name = self.name.upper() if self.name else False
-
 
     @api.depends('name')
     def _compute_check_is_maintenance(self):

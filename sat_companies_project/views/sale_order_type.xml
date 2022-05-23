@@ -42,12 +42,14 @@
                                
                             <group>
                                 <field name="is_create_task" widget="boolean_toggle"/>
+                                <field name="task_template_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible': [('is_create_task', '!=', True)]}"/>
                             </group>
                             <group>
-                                <field name="is_maintenance" attrs="{'invisible': ['|','|',('is_line', '!=', False),('is_mounting', '!=', False),('is_other', '!=', False)]}"/>
-                                <field name="is_line" attrs="{'invisible': ['|','|',('is_maintenance', '!=', False),('is_mounting', '!=', False),('is_other', '!=', False)]}"/>
-                                <field name="is_mounting" attrs="{'invisible': ['|','|',('is_maintenance', '!=', False),('is_line', '!=', False),('is_other', '!=', False)]}"/>
-                                <field name="is_other" attrs="{'invisible': ['|','|',('is_maintenance', '!=', False),('is_line', '!=', False),('is_mounting', '!=', False)]}"/>
+                                <field name="is_maintenance" attrs="{'invisible': ['|','|','|',('is_warning', '!=', False),('is_line', '!=', False),('is_mounting', '!=', False),('is_other', '!=', False)]}"/>
+                                <field name="is_line" attrs="{'invisible': ['|','|','|',('is_warning', '!=', False),('is_maintenance', '!=', False),('is_mounting', '!=', False),('is_other', '!=', False)]}"/>
+                                <field name="is_mounting" attrs="{'invisible': ['|','|','|',('is_warning', '!=', False),('is_maintenance', '!=', False),('is_line', '!=', False),('is_other', '!=', False)]}"/>
+                                <field name="is_other" attrs="{'invisible': ['|','|','|',('is_warning', '!=', False),('is_maintenance', '!=', False),('is_line', '!=', False),('is_mounting', '!=', False)]}"/>
+                                <field name="is_warning" attrs="{'invisible': ['|','|','|',('is_other', '!=', False),('is_maintenance', '!=', False),('is_line', '!=', False),('is_mounting', '!=', False)]}"/>
                             </group>
 
                         </group>

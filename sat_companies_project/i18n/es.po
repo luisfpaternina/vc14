@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 12:25+0000\n"
-"PO-Revision-Date: 2022-03-21 12:25+0000\n"
+"POT-Creation-Date: 2022-05-23 14:10+0000\n"
+"PO-Revision-Date: 2022-05-23 14:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -90,6 +90,7 @@ msgstr "ACEPTAR"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_needaction
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_needaction
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_needaction
 msgid "Action Needed"
 msgstr "Acción necesaria"
@@ -106,6 +107,7 @@ msgstr "Adicionar líneas de tarea ?"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_attachment_count
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_attachment_count
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_attachment_count
 msgid "Attachment Count"
 msgstr "Atchivos Adjuntos"
@@ -116,9 +118,10 @@ msgid "Aviso nuevo servicio externo"
 msgstr ""
 
 #. module: sat_companies_project
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task__check_cabine
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.project_task_inherit_form_view
 msgid "Cabine"
-msgstr ""
+msgstr "Cabina"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task__cabin_confirm
@@ -154,11 +157,6 @@ msgid "Categoría Udn/OT"
 msgstr ""
 
 #. module: sat_companies_project
-#: model:ir.model.fields,field_description:sat_companies_project.field_project_task__check_cabine
-msgid "Check Cabine"
-msgstr "Chequeo de Techo cabina"
-
-#. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task__check_cabine_datetime
 msgid "Check Datetime Cabine"
 msgstr "Fecha de scanner Techo cabina"
@@ -172,16 +170,6 @@ msgstr "Fecha de scanner Sala de Máquinas"
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task__check_pit_datetime
 msgid "Check Datetime Pit"
 msgstr "Fecha de scanner foso"
-
-#. module: sat_companies_project
-#: model:ir.model.fields,field_description:sat_companies_project.field_project_task__check_machine
-msgid "Check Machine"
-msgstr "Chequeo de Máquina"
-
-#. module: sat_companies_project
-#: model:ir.model.fields,field_description:sat_companies_project.field_project_task__check_pit
-msgid "Check Pit"
-msgstr "Chequeo de Foso"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task__check_qr_active
@@ -212,6 +200,7 @@ msgstr "Contacto"
 
 #. module: sat_companies_project
 #: model_terms:ir.actions.act_window,help:sat_companies_project.action_view_categ_udn
+#: model_terms:ir.actions.act_window,help:sat_companies_project.action_view_project_task_template
 #: model_terms:ir.actions.act_window,help:sat_companies_project.action_view_sale_order_type
 msgid "Create new record"
 msgstr "Crear nuevo registro"
@@ -228,6 +217,7 @@ msgstr "Crear tarea"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__create_uid
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__create_uid
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__create_uid
 #: model:ir.model.fields,field_description:sat_companies_project.field_wizard_sale_order_type__create_uid
 msgid "Created by"
@@ -235,6 +225,7 @@ msgstr "Creado por"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__create_date
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__create_date
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__create_date
 #: model:ir.model.fields,field_description:sat_companies_project.field_wizard_sale_order_type__create_date
 msgid "Created on"
@@ -260,9 +251,11 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_project__display_name
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task__display_name
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__display_name
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__display_name
 #: model:ir.model.fields,field_description:sat_companies_project.field_res_partner__display_name
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order__display_name
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_template__display_name
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__display_name
 #: model:ir.model.fields,field_description:sat_companies_project.field_stock_picking__display_name
 #: model:ir.model.fields,field_description:sat_companies_project.field_wizard_sale_order_type__display_name
@@ -301,18 +294,21 @@ msgstr ""
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_follower_ids
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_follower_ids
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_channel_ids
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_channel_ids
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_channel_ids
 msgid "Followers (Channels)"
 msgstr "Seguidores"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_partner_ids
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_partner_ids
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Seguidores"
@@ -342,9 +338,11 @@ msgstr "Tareas generadas"
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_project__id
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task__id
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__id
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__id
 #: model:ir.model.fields,field_description:sat_companies_project.field_res_partner__id
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order__id
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_line__id
+#: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_template__id
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__id
 #: model:ir.model.fields,field_description:sat_companies_project.field_stock_picking__id
 #: model:ir.model.fields,field_description:sat_companies_project.field_wizard_sale_order_type__id
@@ -354,6 +352,8 @@ msgstr "Id"
 #. module: sat_companies_project
 #: model:ir.model.fields,help:sat_companies_project.field_project_task_categ_udn__message_needaction
 #: model:ir.model.fields,help:sat_companies_project.field_project_task_categ_udn__message_unread
+#: model:ir.model.fields,help:sat_companies_project.field_project_task_template__message_needaction
+#: model:ir.model.fields,help:sat_companies_project.field_project_task_template__message_unread
 #: model:ir.model.fields,help:sat_companies_project.field_sale_order_type__message_needaction
 #: model:ir.model.fields,help:sat_companies_project.field_sale_order_type__message_unread
 msgid "If checked, new messages require your attention."
@@ -362,6 +362,8 @@ msgstr "Si está marcada, los mensajes nuevos requieren su atención."
 #. module: sat_companies_project
 #: model:ir.model.fields,help:sat_companies_project.field_project_task_categ_udn__message_has_error
 #: model:ir.model.fields,help:sat_companies_project.field_project_task_categ_udn__message_has_sms_error
+#: model:ir.model.fields,help:sat_companies_project.field_project_task_template__message_has_error
+#: model:ir.model.fields,help:sat_companies_project.field_project_task_template__message_has_sms_error
 #: model:ir.model.fields,help:sat_companies_project.field_sale_order_type__message_has_error
 #: model:ir.model.fields,help:sat_companies_project.field_sale_order_type__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
@@ -369,6 +371,7 @@ msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_is_follower
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_is_follower
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_is_follower
 msgid "Is Follower"
 msgstr "Es un seguidor"
@@ -395,16 +398,27 @@ msgid "Is line"
 msgstr "Línea"
 
 #. module: sat_companies_project
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task__is_maintenance
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order__is_maintenance
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__is_maintenance
 msgid "Is maintenance"
-msgstr "Mantenimiento"
+msgstr "Es mantenedora"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order__is_mounting
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__is_mounting
 msgid "Is mounting"
 msgstr "Montaje"
+
+#. module: sat_companies_project
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task__is_old_task
+msgid "Is old task"
+msgstr "Tarea vieja"
+
+#. module: sat_companies_project
+#: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__is_warning
+msgid "Is warning"
+msgstr "Aviso"
 
 #. module: sat_companies_project
 #: model:ir.model,name:sat_companies_project.model_account_move
@@ -416,9 +430,11 @@ msgstr "Asiento contable"
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_project____last_update
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task____last_update
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn____last_update
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template____last_update
 #: model:ir.model.fields,field_description:sat_companies_project.field_res_partner____last_update
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order____last_update
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_template____last_update
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type____last_update
 #: model:ir.model.fields,field_description:sat_companies_project.field_stock_picking____last_update
 #: model:ir.model.fields,field_description:sat_companies_project.field_wizard_sale_order_type____last_update
@@ -427,6 +443,7 @@ msgstr "Última modificación el"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__write_uid
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__write_uid
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__write_uid
 #: model:ir.model.fields,field_description:sat_companies_project.field_wizard_sale_order_type__write_uid
 msgid "Last Updated by"
@@ -434,6 +451,7 @@ msgstr "Última actualización por"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__write_date
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__write_date
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__write_date
 #: model:ir.model.fields,field_description:sat_companies_project.field_wizard_sale_order_type__write_date
 msgid "Last Updated on"
@@ -442,14 +460,15 @@ msgstr "Última actualización en"
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_project__location_count
 msgid "Location count"
-msgstr ""
+msgstr "Contador de ubicaciones"
 
 #. module: sat_companies_project
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.inherit_view_project_project_sat_companies_project
 msgid "Locations"
-msgstr ""
+msgstr "Ubicaciones"
 
 #. module: sat_companies_project
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task__check_machine
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.project_task_inherit_form_view
 msgid "Machine"
 msgstr ""
@@ -461,6 +480,7 @@ msgstr "Confirmar máquina"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_main_attachment_id
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_main_attachment_id
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Accesorio principal"
@@ -487,12 +507,14 @@ msgstr "Administrador grupo de permisos tipo de presupuesto"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_has_error
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_has_error
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_has_error
 msgid "Message Delivery error"
 msgstr "Error de entrega de mensaje"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_ids
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_ids
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_ids
 msgid "Messages"
 msgstr "Mensajes"
@@ -504,9 +526,11 @@ msgstr "Mensajes"
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task__to_gadget_location
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task__to_zone_location
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__name
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__name
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__name
 #: model:ir.model.fields,field_description:sat_companies_project.field_wizard_sale_order_type__name
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.view_project_task_categ_udn_form
+#: model_terms:ir.ui.view,arch_db:sat_companies_project.view_project_task_template_form
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.view_sale_order_typet_form
 msgid "Name"
 msgstr "Nombre"
@@ -530,30 +554,35 @@ msgstr ""
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_needaction_counter
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_needaction_counter
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_needaction_counter
 msgid "Number of Actions"
 msgstr "Número de acciones"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_has_error_counter
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_has_error_counter
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_has_error_counter
 msgid "Number of errors"
 msgstr "Número de errores"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,help:sat_companies_project.field_project_task_categ_udn__message_needaction_counter
+#: model:ir.model.fields,help:sat_companies_project.field_project_task_template__message_needaction_counter
 #: model:ir.model.fields,help:sat_companies_project.field_sale_order_type__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr "Número de mensajes que requieren una acción"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,help:sat_companies_project.field_project_task_categ_udn__message_has_error_counter
+#: model:ir.model.fields,help:sat_companies_project.field_project_task_template__message_has_error_counter
 #: model:ir.model.fields,help:sat_companies_project.field_sale_order_type__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Número de mensajes con error de entrega"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,help:sat_companies_project.field_project_task_categ_udn__message_unread_counter
+#: model:ir.model.fields,help:sat_companies_project.field_project_task_template__message_unread_counter
 #: model:ir.model.fields,help:sat_companies_project.field_sale_order_type__message_unread_counter
 msgid "Number of unread messages"
 msgstr "Número de mensajes no leídos"
@@ -584,6 +613,7 @@ msgid "Picking"
 msgstr ""
 
 #. module: sat_companies_project
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task__check_pit
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.project_task_inherit_form_view
 msgid "Pit"
 msgstr ""
@@ -636,6 +666,11 @@ msgid "Qr Scanner"
 msgstr "Qr Escaner"
 
 #. module: sat_companies_project
+#: model:ir.model,name:sat_companies_project.model_sale_order_template
+msgid "Quotation Template"
+msgstr "Plantilla de presupuesto"
+
+#. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task__rae_gadget
 msgid "R.A.E"
 msgstr ""
@@ -652,6 +687,7 @@ msgstr "Relacionar líneas"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_has_sms_error
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_has_sms_error
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr "Error de entrega de SMS"
@@ -659,7 +695,7 @@ msgstr "Error de entrega de SMS"
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_project__sale_order_id
 msgid "Sale Order"
-msgstr ""
+msgstr "Pedido"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_project__sale_type_origin_id
@@ -685,6 +721,7 @@ msgstr "Tipo de presupuesto"
 #. module: sat_companies_project
 #: model:ir.actions.act_window,name:sat_companies_project.action_view_sale_order_type
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order__sale_type_id
+#: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_template__sale_type_id
 #: model:ir.ui.menu,name:sat_companies_project.menu_sale_order_type
 msgid "Sale type"
 msgstr "Tipo de presupuesto/OT"
@@ -749,9 +786,22 @@ msgstr "Tarea generada por el elemento del pedido de venta"
 #. module: sat_companies_project
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.wizard_sale_order_type_form
 msgid "Task lines"
-msgstr ""
+msgstr "Líneas de tarea"
 
 #. module: sat_companies_project
+#: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__task_template_id
+msgid "Task template"
+msgstr "Plantilla de tareas"
+
+#. module: sat_companies_project
+#: model:ir.actions.act_window,name:sat_companies_project.action_view_project_task_template
+#: model:ir.model,name:sat_companies_project.model_project_task_template
+#: model:ir.ui.menu,name:sat_companies_project.menu_project_task_template
+msgid "Task templates"
+msgstr "Plantillas de tareas"
+
+#. module: sat_companies_project
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__task_ids
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__project_task_ids
 msgid "Tasks"
 msgstr "Tareas"
@@ -806,6 +856,11 @@ msgid "Tipo Suscripción"
 msgstr ""
 
 #. module: sat_companies_project
+#: model:ir.model,name:sat_companies_project.model_wizard_sale_order_type
+msgid "Tipo de presupuesto"
+msgstr ""
+
+#. module: sat_companies_project
 #: model:ir.ui.menu,name:sat_companies_project.menu_sale_order_type_subscription
 msgid "Tipo de presupuesto/OT"
 msgstr ""
@@ -834,7 +889,7 @@ msgstr "Albarán"
 #. module: sat_companies_project
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.inherit_view_project_task_one
 msgid "Transfers"
-msgstr ""
+msgstr "Transferencias"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order__udn_id
@@ -843,12 +898,14 @@ msgstr ""
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_unread
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_unread
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_unread
 msgid "Unread Messages"
 msgstr "Mensajes no leídos"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__message_unread_counter
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__message_unread_counter
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr "Conteo mensajes no leídos"
@@ -865,16 +922,18 @@ msgstr ""
 #: code:addons/sat_companies_project/models/sale_order.py:0
 #, python-format
 msgid "Verify the type of client if it is potential"
-msgstr "Verificar si el contacto es potencial!"
+msgstr ""
 
 #. module: sat_companies_project
 #: model:ir.model.fields,field_description:sat_companies_project.field_project_task_categ_udn__website_message_ids
+#: model:ir.model.fields,field_description:sat_companies_project.field_project_task_template__website_message_ids
 #: model:ir.model.fields,field_description:sat_companies_project.field_sale_order_type__website_message_ids
 msgid "Website Messages"
 msgstr "Mensajes sitio Web"
 
 #. module: sat_companies_project
 #: model:ir.model.fields,help:sat_companies_project.field_project_task_categ_udn__website_message_ids
+#: model:ir.model.fields,help:sat_companies_project.field_project_task_template__website_message_ids
 #: model:ir.model.fields,help:sat_companies_project.field_sale_order_type__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicación del website"
@@ -886,15 +945,11 @@ msgstr ""
 
 #. module: sat_companies_project
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.view_project_task_categ_udn_form
+#: model_terms:ir.ui.view,arch_db:sat_companies_project.view_project_task_template_form
 msgid "ot_checklist_form"
 msgstr ""
 
 #. module: sat_companies_project
 #: model_terms:ir.ui.view,arch_db:sat_companies_project.view_sale_order_typet_form
 msgid "sale_type_form"
-msgstr ""
-
-#. module: sat_companies_project
-#: model:ir.model,name:sat_companies_project.model_wizard_sale_order_type
-msgid "wizard.sale.order.type"
 msgstr ""

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 10:14+0000\n"
-"PO-Revision-Date: 2022-02-14 10:14+0000\n"
+"POT-Creation-Date: 2022-05-23 11:57+0000\n"
+"PO-Revision-Date: 2022-05-23 11:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -579,6 +579,11 @@ msgid "Checklists"
 msgstr ""
 
 #. module: sat_companies_industry
+#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__task_signature
+msgid "Client signature"
+msgstr "Firma cliente"
+
+#. module: sat_companies_industry
 #: model:ir.model.fields,field_description:sat_companies_industry.field_maintenance_minute_point__code
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_ot_checklist__code
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_type_associated__code
@@ -626,6 +631,11 @@ msgstr "Creado en"
 #. module: sat_companies_industry
 #: model_terms:ir.ui.view,arch_db:sat_companies_industry.report_print_technical_data_industry
 msgid "DATOS TÉCNICOS"
+msgstr ""
+
+#. module: sat_companies_industry
+#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__dni
+msgid "DNI"
 msgstr ""
 
 #. module: sat_companies_industry
@@ -695,6 +705,11 @@ msgstr "Febrero"
 #: model:ir.model.fields.selection,name:sat_companies_industry.selection__project_task__situation__finished
 msgid "Finished"
 msgstr "Finalizada"
+
+#. module: sat_companies_industry
+#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__floor
+msgid "Floor"
+msgstr "Piso"
 
 #. module: sat_companies_industry
 #: model:ir.model.fields,field_description:sat_companies_industry.field_maintenance_minute_point__message_follower_ids
@@ -892,6 +907,11 @@ msgid "Is September"
 msgstr "Is septiembre"
 
 #. module: sat_companies_industry
+#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__is_maintenance
+msgid "Is maintenance"
+msgstr "Es mantenedora"
+
+#. module: sat_companies_industry
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_checklist_minute__is_reviewed
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_ot_checklist_line__is_reviewed
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_ot_checklist_line__is_reviewed_checklist
@@ -1068,7 +1088,6 @@ msgstr "Mes"
 #: model:ir.model.fields,field_description:sat_companies_industry.field_maintenance_minute_point__name
 #: model:ir.model.fields,field_description:sat_companies_industry.field_maintenance_type_deffect__name
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_checklist_minute__name
-#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_inspection__name
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_ot_checklist__name
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_ot_checklist_line__name
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_ot_checklist_location__name
@@ -1077,6 +1096,11 @@ msgstr "Mes"
 #: model_terms:ir.ui.view,arch_db:sat_companies_industry.view_project_task_inspection_form
 msgid "Name"
 msgstr "Nombre"
+
+#. module: sat_companies_industry
+#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__name_of_signatory
+msgid "Name of signatory"
+msgstr "Nombre del firmante"
 
 #. module: sat_companies_industry
 #: model:ir.model.fields.selection,name:sat_companies_industry.selection__project_task_ot_checklist__accomplished__not
@@ -1224,6 +1248,11 @@ msgid "Pending to validate"
 msgstr "Pendiente validar"
 
 #. module: sat_companies_industry
+#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task_inspection__name
+msgid "Periodicity"
+msgstr "Periocidad"
+
+#. module: sat_companies_industry
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__contact_person
 msgid "Pers.Ctto"
 msgstr ""
@@ -1257,6 +1286,11 @@ msgstr "Fecha fin.Prev"
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__prev_start_date
 msgid "Prev start date"
 msgstr "Fecha inicio.Prev"
+
+#. module: sat_companies_industry
+#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__rae
+msgid "R.A.E"
+msgstr ""
 
 #. module: sat_companies_industry
 #: model_terms:ir.ui.view,arch_db:sat_companies_industry.report_print_technical_data_industry
@@ -1306,11 +1340,6 @@ msgid "September"
 msgstr "Septiembre"
 
 #. module: sat_companies_industry
-#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__task_signature
-msgid "Signature"
-msgstr "Firma"
-
-#. module: sat_companies_industry
 #: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__situation
 msgid "Situation"
 msgstr "Situación"
@@ -1338,7 +1367,12 @@ msgstr "Tarea"
 #: code:addons/sat_companies_industry/models/project_task.py:0
 #, python-format
 msgid "The column should be one per line"
-msgstr "No se pueden repetir registros en la tabla!"
+msgstr ""
+
+#. module: sat_companies_industry
+#: model:ir.model.fields,field_description:sat_companies_industry.field_project_task__ot_type_id
+msgid "Tipo OT"
+msgstr ""
 
 #. module: sat_companies_industry
 #: model:ir.actions.report,name:sat_companies_industry.report_custom_template
