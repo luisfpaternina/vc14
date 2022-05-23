@@ -1,3 +1,4 @@
+from markupsafe import string
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from datetime import date
@@ -103,7 +104,7 @@ class ProjectTask(models.Model):
         'project.task.type.associated',
         string="Associated type")
     task_signature = fields.Binary(
-        string="Signature")
+        string="Client signature")
     checklist_ot_ids = fields.One2many(
         'project.task.ot.checklist.line',
         'task_id',
@@ -126,6 +127,12 @@ class ProjectTask(models.Model):
         string="OT type")
     is_maintenance = fields.Boolean(
         string="Is maintenance")
+    name_of_signatory = fields.Char(
+        string="Name of signatory")
+    dni = fields.Char(
+        string="DNI")
+    floor = fields.Char(
+        string="Floor")
 
 
     @api.onchange('ot_type_id')
