@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-18 01:32+0000\n"
-"PO-Revision-Date: 2022-05-18 01:32+0000\n"
+"POT-Creation-Date: 2022-05-23 10:42+0000\n"
+"PO-Revision-Date: 2022-05-23 10:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -45,16 +45,6 @@ msgstr "CANCELAR"
 #: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
 msgid "Check Availability"
 msgstr ""
-
-#. module: pc_stock_picking_ext
-#: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
-msgid "Contact"
-msgstr "Contacto"
-
-#. module: pc_stock_picking_ext
-#: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
-msgid "Delivery Address"
-msgstr "Dirección de entrega"
 
 #. module: pc_stock_picking_ext
 #: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
@@ -131,7 +121,7 @@ msgstr "Grupo de permisos Administrator solicitud de transferencia"
 #. module: pc_stock_picking_ext
 #: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
 msgid "Mark as Todo"
-msgstr ""
+msgstr "MARCAR POR REALIZAR"
 
 #. module: pc_stock_picking_ext
 #: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
@@ -156,11 +146,6 @@ msgstr "Imprimir"
 #. module: pc_stock_picking_ext
 #: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
 msgid "Put in Pack"
-msgstr ""
-
-#. module: pc_stock_picking_ext
-#: model_terms:ir.ui.view,arch_db:pc_stock_picking_ext.new_view_stock_picking_form
-msgid "Receive From"
 msgstr ""
 
 #. module: pc_stock_picking_ext
@@ -191,7 +176,7 @@ msgstr ""
 #. module: pc_stock_picking_ext
 #: model:ir.model.fields,field_description:pc_stock_picking_ext.field_stock_picking__task_id
 msgid "Task"
-msgstr "OT/Tarea"
+msgstr "OT"
 
 #. module: pc_stock_picking_ext
 #: model:ir.model,name:pc_stock_picking_ext.model_stock_picking
