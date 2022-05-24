@@ -22,8 +22,7 @@
 
     'data': [
 
-        'security/security.xml',  
-        #'security/ir.model.access.csv',    
+        'security/security.xml',    
         'views/stock_picking.xml',
               
     ],
