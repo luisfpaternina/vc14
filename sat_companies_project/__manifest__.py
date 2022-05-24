@@ -39,6 +39,7 @@
         'data/project_template_new_task.xml',
         'data/action_automated_new_field_service.xml',
         'data/sale.order.type.csv',
+        'data/sequences.xml',
         
     ],
     'installable': True
