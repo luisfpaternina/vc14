@@ -112,12 +112,6 @@ class ProjectTaskInherit(models.Model):
     is_old_task = fields.Boolean(
         string="Is old task",
         default=True)
-    task_code = fields.Char(
-        string="Code",
-        copy=False,
-        default='New')
-    task_name = fields.Char(
-        string="Task name")
 
 
     @api.onchange('partner_id','ot_type_id')
@@ -130,10 +124,12 @@ class ProjectTaskInherit(models.Model):
             else:
                 record.payment_term_ot_id = record.partner_id.property_payment_term_id
 
+
     @api.onchange('categ_udn_id')
     def related_type_ot(self):
         for record in self:
             record.ot_type_id = record.categ_udn_id.ot_type_id
+
 
     def compute_check_suscription_recurrent(self):
         for record in self:
@@ -146,6 +142,7 @@ class ProjectTaskInherit(models.Model):
                     record.check_suscription_recurrent = False
             else:
                 record.check_suscription_recurrent = False
+
 
     def confirm_check_gadget(self):
         for record in self:
@@ -178,6 +175,7 @@ class ProjectTaskInherit(models.Model):
                             record.cabin_confirm = True
                             record.machine_confirm = False
                             record.qr_scanner = False
+    
 
     @api.onchange('qr_scanner')
     def _onchange_qr_scanner(self):
@@ -187,6 +185,7 @@ class ProjectTaskInherit(models.Model):
             else:
                 record.check_qr_active = False
 
+
     def write(self, vals):
         res = super(ProjectTaskInherit, self).write(vals)
         for record in self:
@@ -195,6 +194,7 @@ class ProjectTaskInherit(models.Model):
                     record.state_check_qr = 'done'
                 else:
                     record.state_check_qr = 'checking'
+
 
     def action_url(self):
         return {  
