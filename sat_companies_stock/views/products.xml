@@ -110,7 +110,6 @@
                             </group>
                   </group>
                 </page>
-                 
                 <page name="qr_gadget" string="Qr Gadget" attrs="{'invisible': [('is_gadget', '!=', True)]}">
                     <group colspan="3">
                         <group colspan="1" col="2">
